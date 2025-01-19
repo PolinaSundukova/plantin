@@ -20,5 +20,34 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `
+const sunriseBackground = () => {
+
+
+  const sunriseSection = gsap.timeline()
+    .to(".boat1", {
+      x: 300,
+    })
+    .to(".boat2", {
+      x: 300,
+    })
+
+  ScrollTrigger.create({
+    trigger: ".scene-one",
+    animation: sunriseSection,
+    start: "top 0%",
+    end: "bottom 0%",
+    scrub: 1
+  });
+}
+
 
 setupCounter(document.querySelector('#counter'))
+
+const init = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  // gsap.registerPlugin(MotionPathPlugin);
+
+  sunriseBackground();
+
+}
+init();
