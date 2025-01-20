@@ -20,7 +20,7 @@
   <!-- <div id="app"></div> -->
   <header>
     <nav>
-      <div class="logo"><img src="./src/assets/logo-museum.svg" alt=""></div>
+      <div class="logo"><img src="./src/assets/logo-museum.svg" alt="" width="60"></div>
 
       <ul class="navigation">
         <li>Biography</li>
@@ -28,60 +28,148 @@
         <li>Engravings</li>
         <!-- <li></li> -->
       </ul>
+      <!-- ?????? menu is full of list while at the home page, after scrolling started - 
+        becoming the humburger menu, the logo comes to left -->
     </nav>
   </header>
   <main>
-    <div>A 6-episode digital journey to the Plantin Press presents:</div>
-    <h1>“A Journey Through Plantin's Printing Techniques”</h1>
-    <section class="intro">
-      <img src="./src/assets/logo-intro.svg" alt="">
-      <h2>Labore et Constantia</h2>
-      <p><strong>Christophe Plantin</strong> was a French Renaissance humanist and a renowned book printer and
-        publisher. He established one of
-        the most influential publishing houses of his time in Antwerp, transforming the city into a leading center of
-        European
-        book production.</p>
-      <p>Plantin's legacy extends far beyond his impressive body of work. His printing house, the Plantin Press,
-        continued to
-        operate for generations, and today, the <strong>Plantin-Moretus Museum</strong> in Antwerp, a UNESCO World
-        Heritage Site, stands as a
-        testament to his enduring contribution to the world of printing and publishing.</p>
+    <section class="header_page">
+      <div class="header_page_header">
+        <p>A 6-episode digital journey to the Plantin Press presents:</p>
+        <h1>“A Journey Through Plantin's Printing Techniques”</h1>
+      </div>
+      <img src="./src/assets/portret-plantin.svg" alt="Plantin portret" width="200">
     </section>
+
+    <section class="intro">
+
+      <div class="intro_gravures">
+        <img class="intro-gravure intro_gravure--1" src="./src/assets/intro-gravure.1.svg" width="200" alt="">
+        <img class="intro-gravure intro_gravure--2" src="./src/assets/intro-gravure.2.svg" width="200" alt="">
+        <!-- how to do illustrations cut in two halfs and coming out of viewport -->
+      </div>
+
+      <div class="logo_intro">
+        <img src="./src/assets/logo-intro.svg" alt="">
+        <h2>Labore et Constantia</h2>
+        <p><strong>Christophe Plantin</strong> was a French Renaissance humanist and a renowned book printer and
+          publisher. He established one of
+          the most influential publishing houses of his time in Antwerp, transforming the city into a leading center of
+          European
+          book production.</p>
+        <p>Plantin's legacy extends far beyond his impressive body of work. His printing house, the Plantin Press,
+          continued to
+          operate for generations, and today, the <strong>Plantin-Moretus Museum</strong> in Antwerp, a UNESCO World
+          Heritage Site, stands as a
+          testament to his enduring contribution to the world of printing and publishing.</p>
+      </div>
+
+    </section>
+
+    <!-- how to avoid horisontal scroll on the rest of webpage bc of width of timeline -->
     <section class="timeline">
-      <h2>Flow of history</h2>
-      <p>Plantin was born in Saint-Avertin, a hamlet in the region of
-        Tours in France</p>
-      <p>Marries Jeanne Rivière,
-        Settles in Antwerp and initially earns his living as a bookbinder and leatherworker.</p>
-      <p>Establishes his own print shop and becomes an accomplished printer.</p>
-      <p>Faces persecution due to the discovery of a Calvinist pamphlet in his print shop. Flees to Paris for a year and
-        a half
-        before his name is cleared.</p>
-      <p>Returns to Antwerp, where his friends have protected his property from government seizure.</p>
-      <p>Receives financial support from Philip II of Spain for a scholarly edition of the Bible.</p>
-      <p>Awarded the honorary title of "Arch-Printer to the King".</p>
-      <p>Completes the "Biblia Regia" (King's Bible), also known as the Plantin Polyglot, a monumental multilingual
-        edition of
-        the Bible together with Claude Garamond.</p>
-      <p>The Spanish Fury devastates Antwerp, disrupting his business. Establishes a branch of his firm in Paris.</p>
-      <p>Relocates to Leiden, Netherlands, where the newly founded university presents new business opportunities. His
-        sons-in-law take over the management of the Antwerp branch.</p>
-      <p>Returns to Antwerp. Franciscus Raphelengius takes over the Leiden branch.</p>
-      <p>Passes away, leaving behind a thriving publishing house and a lasting legacy in the world of printing.</p>
-      <article>
-        <p>The Plantin-Moretus Museum in Antwerp, a UNESCO World Heritage Site, stands as a testament to his enduring
-          contribution
-          to the world of printing and publishing.</p>
-        <button>Visit the Website</button>
-      </article>
+      <h2 class="flow">Flow of history</h2>
+      <!-- grid structure?? -->
+      <!-- how to optimise the scroll effect for all the timecodes -->
+      <div class="timecodes">
+        <!-- the line & dots = background/images/???? -->
+        <div class="timecode timecode--start">
+          <h4>The story starts here...</h4>
+          <div class="timecode_date">start</div>
+        </div>
+        <div class="timecode timecode--1520">
+          <p class="timecode_p">Plantin was born in Saint-Avertin, a hamlet in the region of
+            Tours in France</p>
+          <div class="timecode_date">1520</div>
+        </div>
+
+        <div class="timecode timecode--1545">
+          <p class="timecode_p">Marries Jeanne Rivière,
+            Settles in Antwerp and initially earns his living as a bookbinder and leatherworker.</p>
+          <div class="timecode_date">1545</div>
+        </div>
+        <div class="timecode timecode--1555">
+          <p class="timecode_p">Establishes his own print shop and becomes an accomplished printer.</p>
+          <div class="timecode_date">1555</div>
+        </div>
+        <div class="timecode timecode--1562">
+          <p class="timecode_p">Faces persecution due to the discovery of a Calvinist pamphlet in his print shop. Flees
+            to Paris for a year
+            and
+            a half
+            before his name is cleared.</p>
+          <div class="timecode_date">1562</div>
+        </div>
+        <div class="timecode timecode--1563">
+          <p class="timecode_p">Returns to Antwerp, where his friends have protected his property from government
+            seizure.</p>
+          <div class="timecode_date">1563</div>
+        </div>
+        <div class="timecode timecode--1567">
+          <p class="timecode_p">Receives financial support from Philip II of Spain for a scholarly edition of the Bible.
+          </p>
+          <div class="timecode_date">1567</div>
+        </div>
+        <div class="timecode timecode--1570">
+          <p class="timecode_p">Awarded the honorary title of "Arch-Printer to the King".</p>
+          <div class="timecode_date">1570</div>
+        </div>
+        <div class="timecode timecode--1573">
+          <p class="timecode_p">Completes the "Biblia Regia" (King's Bible), also known as the Plantin Polyglot, a
+            monumental multilingual
+            edition of
+            the Bible together with Claude Garamond.</p>
+          <div class="timecode_date">1573</div>
+        </div>
+        <div class="timecode timecode--1576">
+          <p class="timecode_p">The Spanish Fury devastates Antwerp, disrupting his business. Establishes a branch of
+            his firm in Paris.
+          </p>
+          <div class="timecode_date">1576</div>
+        </div>
+        <div class="timecode timecode--1583">
+          <p class="timecode_p">Relocates to Leiden, Netherlands, where the newly founded university presents new
+            business opportunities.
+            His
+            sons-in-law take over the management of the Antwerp branch.</p>
+          <div class="timecode_date">1583</div>
+        </div>
+        <div class="timecode timecode--1586">
+          <p class="timecode_p">Returns to Antwerp. Franciscus Raphelengius takes over the Leiden branch.</p>
+          <div class="timecode_date">1586</div>
+        </div>
+        <div class="timecode timecode--1589">
+          <p class="timecode_p">Passes away, leaving behind a thriving publishing house and a lasting legacy in the
+            world of printing.</p>
+          <div class="timecode_date">1589</div>
+        </div>
+        <div class="timecode timecode--2025">
+          <p class="timecode_p">The Plantin-Moretus Museum in Antwerp, a UNESCO World Heritage Site, stands as a
+            testament to his enduring
+            contribution
+            to the world of printing and publishing.</p>
+          <button>Visit the Website</button>
+          <div class="timecode_date">2025</div>
+        </div>
+      </div>
+
+      <!-- <img src="./src/assets/timeline_arrow.svg" alt=""> -->
+
+    </section>
+    <section class="letters_section">
+
     </section>
     <section class="typography">
-      <h2>The Art of Typography</h2>
-      <p>Plantin championed the use of high-quality typefaces, recognizing their crucial role in enhancing readability
-        and the
-        overall aesthetic appeal of his books. He drew inspiration from classical Roman inscriptions and Renaissance
-        humanism,
-        striving for typefaces that were both elegant and legible.</p>
+      <div class="typography_intro">
+        <h2>The Art of Typography</h2>
+        <p>Plantin championed the use of high-quality typefaces, recognizing their crucial role in enhancing readability
+          and the
+          overall aesthetic appeal of his books. He drew inspiration from classical Roman inscriptions and Renaissance
+          humanism,
+          striving for typefaces that were both elegant and legible.</p>
+
+      </div>
+
       <article class="typing_quest">
         <h3>Typing Quest:</h3>
         <p>Try to guess and type the name of the group of typefaces which named for sixteenth-century engraver. Plantin
@@ -91,17 +179,22 @@
           Tip: Use colourful punches</p>
         <div class="punches"></div>
         <div class="letter_spaces">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="g_letter">?</div>
+          <div class="a_letter">?</div>
+          <div class="r_letter">?</div>
+          <div class="a_letter">?</div>
+          <div class="m_letter">?</div>
+          <div class="o_letter">?</div>
+          <div class="n_letter">?</div>
+          <div class="d_letter">?</div>
         </div>
       </article>
       <article class="garamond">
+        <div class="garamond_gravure">
+          <img src="./src/assets/portret-garamond.1.png" width="200" alt="">
+          <img src="./src/assets/portret-garamond.2.png" width="200" alt="">
+          <!-- how to do illustrations cut in two halfs and coming out of viewport -->
+        </div>
         <h3>And the answer is...</h3>
         <p>Plantin invested heavily in the creation of new typefaces. Skilled artisans, called punchcutters,
           meticulously carved
@@ -119,17 +212,21 @@
       </article>
     </section>
     <section class="engravings">
-      <h2>A Master of Craftsmanship</h2>
-      <p>Plantin was celebrated for his meticulous attention to detail, producing books of exceptional quality with
-        exquisite
-        typography, careful editing, and stunning illustrations. He employed some of the most talented artists of his
-        time,
-        including the renowned engraver, <strong>Johannes Wierix</strong>.</p>
-      <p>Wierix brought a new level of artistry to Plantin's books. His engravings were characterized by intricate
-        detail,
-        dynamic composition, and expressive power. He mastered the technique of copper engraving, which involved
-        carefully
-        carving intricate patterns into metal plates.</p>
+      <div class="engravings_intro">
+        <h2>A Master of Craftsmanship</h2>
+        <p>Plantin was celebrated for his meticulous attention to detail, producing books of exceptional quality with
+          exquisite
+          typography, careful editing, and stunning illustrations. He employed some of the most talented artists of his
+          time,
+          including the renowned engraver, <strong>Johannes Wierix</strong>.</p>
+        <p>Wierix brought a new level of artistry to Plantin's books. His engravings were characterized by intricate
+          detail,
+          dynamic composition, and expressive power. He mastered the technique of copper engraving, which involved
+          carefully
+          carving intricate patterns into metal plates.</p>
+      </div>
+
+
       <article class="engraving_techniques">
         <h3>Engraving techniques</h3>
         <p>Engraver made his images using an impression on paper (in a mirror form) from a printing plate — a "board"
@@ -173,6 +270,19 @@
           examples of true craftmanship,
           drawings masterly cut in wood.</p>
       </article>
+      <article class="engraving_workshop">
+        <div>
+          <h3>Woodblock workshop</h3>
+          <ol>
+            <li><strong>Draw</strong> the picture for your woodblock inside the canvas.</li>
+            <li>Your drawing will be <strong>engraved</strong> with our special tool.</li>
+            <li>Watch your design becoming the piece of <strong>printed art</strong>.</li>
+          </ol>
+        </div>
+        <div>
+          <canvas class="woodblock_canvas"></canvas>
+        </div>
+      </article>
     </section>
 
     <section class="legacy">
@@ -191,6 +301,10 @@
   <footer>
     <img src="./src/assets/logo-museum.svg" alt="">
   </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <script type="module" src="/src/main.js"></script>
 
