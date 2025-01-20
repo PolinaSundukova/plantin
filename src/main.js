@@ -1,53 +1,131 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
-
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
-const sunriseBackground = () => {
 
 
-  const sunriseSection = gsap.timeline()
-    .to(".boat1", {
-      x: 300,
+//pin - for two-halfs img to be stacked while the text is appearing between them
+
+const timelineScrollAnimation = () => {
+  const timecodes = gsap.utils.toArray(".timeline .timecode");
+  const $timecodes = document.querySelector(".timecodes");
+  // const $flow = document.querySelector(".flow");
+
+  const $timeline = document.querySelector(".timeline");
+
+  console.log(timecodes.length)
+
+  let scrollTween = gsap.to(timecodes, {
+    xPercent: -100 * (timecodes.length + 2),
+    ease: "none",
+    scrollTrigger: {
+      trigger: $timeline,
+      start: "top top",
+      end: () => {
+        return "+=" + ($timeline.offsetWidth)
+      },
+      pin: $timeline,
+      scrub: 1,
+      markers: true
+    }
+  })
+
+  timecodes.forEach(element => {
+    // const title = element.querySelector("h1");
+    const paragraph = element.querySelectorAll("p");
+    //
+    let tl = gsap.timeline()
+      // .from(title, {
+      //   opacity: 0,
+      //   x: "-50",
+      //   duration: 0.5
+      // })
+      .from(paragraph, {
+        opacity: 0,
+        y: -100,
+        // y: "+30",
+        duration: 2
+      })
+    ScrollTrigger.create({
+      trigger: element,
+      containerAnimation: scrollTween,
+      animation: tl,
+      // start: "top 100%",
+      // end: "bottom -100%",
+      start: "left 80%",
+      end: "right 90%",
+      scrub: 1,
+      // markers: true
     })
-    .to(".boat2", {
-      x: 300,
-    })
+  })
 
-  ScrollTrigger.create({
-    trigger: ".scene-one",
-    animation: sunriseSection,
-    start: "top 0%",
-    end: "bottom 0%",
-    scrub: 1
-  });
+
 }
 
 
-setupCounter(document.querySelector('#counter'))
+
+const introAnimation = () => {
+
+  const $intro = document.querySelector(".intro")
+  const $gravures = document.querySelector(".intro_gravures")
+  const introGravure = gsap.timeline()
+
+    .to(".intro_gravure--1", {
+      x: '-45vw',
+    })
+    .to(".intro_gravure--2", {
+      x: '45vw',
+    })
+
+  // .to([".intro_gravure--1", ".intro_gravure--2"], {
+  //   x: -100,
+  // })
+
+  // .to([
+  //   { targets: ".intro_gravure--1", x: -100 },
+  //   { targets: ".intro_gravure--2", x: 100 }
+  // ], {
+  //   duration: 1,
+  // });
+
+  ScrollTrigger.create({
+    trigger: ".intro",
+    animation: introGravure,
+    start: "top 20%",
+    end: "bottom 80%",
+    scrub: 1,
+    pin: $intro,
+    // markers: true
+  });
+}
+
+const introSecondAnimation = () => {
+
+  const $intro = document.querySelector(".intro")
+  const $gravures = document.querySelector(".intro_gravures")
+  const introGravure = gsap.timeline()
+
+    .to(".intro_gravures", {
+      //x: 700,
+      scrollTrigger: {
+        trigger: ".logo_intro",
+        start: "top 20%",
+        end: "bottom 30%",
+        // toggleClass: "white",
+        markers: { fontSize: "25px", fontWeight: "bold" },
+        scrub: true,
+        pin: ".intro_gravures",
+        pinSpacing: false, //set to true to see extra padding added
+      },
+    });
+
+}
+
+
 
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   // gsap.registerPlugin(MotionPathPlugin);
-
-  sunriseBackground();
+  timelineScrollAnimation();
+  // introAnimation();
+  // introSecondAnimation();
 
 }
 init();
