@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  width: 100vw;
   /* place-items: center; */
   /* min-width: 320px; */
   /* min-height: 100vh; */
@@ -42,7 +43,7 @@ body {
 
 h1 {
   /* font-size: 3.2em; */
-  font-size: calc(48px + 1vw);
+  font-size: calc(36px + 1vw);
   line-height: 1;
   margin: 0;
 }
@@ -57,20 +58,30 @@ h2 {
 h3 {
   font-family: var(--f-gothic);
   font-size: calc(32px + 1.5vw);
+  text-align: center;
+}
+
+h4 {
+  font-family: var(--f-gothic);
+  font-size: calc(24px + 1.5vw);
+  text-align: center;
 }
 
 section {
   /* width: 100%; */
   /* width: 100vh; */
+  /* overflow-x: hidden; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  padding: 2rem;
+  padding: 1.5rem;
   /* width: 100%; */
 }
 
-article {}
+article {
+  width: 100%;
+}
 
 p {
   font-size: 18px;
@@ -141,7 +152,7 @@ nav {
 } */
 
 .menu_navigation {
-  /* display: none; */
+  display: none;
 
   padding: 0;
   /* list-style: none;
@@ -152,12 +163,12 @@ nav {
 }
 
 .menu_navigation h2 {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   color: var(--c-white);
 }
 
 .menu_footer {
-  display: flex;
+  display: none;
   /* justify-content: space-between; */
   gap: 1rem;
   align-items: center;
@@ -204,6 +215,10 @@ nav {
   .hamburger {
     display: block;
     z-index: 2;
+  }
+
+  .menu_footer {
+    display: flex;
   }
 
   .menu_navigation {
@@ -254,17 +269,19 @@ nav {
   }
 }
 
+
+
 .header_page {
   display: flex;
   flex-direction: column-reverse;
-  justify-content: start;
+  justify-content: space-between;
   padding-top: 0;
-  height: 80vh;
+  /* height: 80vh; */
   background-repeat: no-repeat;
   background-image: url(./assets/home-bg-mobile.svg);
   background-position: top center;
   background-size: contain;
-  height: 80vh;
+  height: 85vh;
   /* background-size: cover; */
 }
 
@@ -301,8 +318,10 @@ element {
 .intro {}
 
 .intro_gravures,
-.garamond_gravure {
+.garamond_gravures,
+.engravings-gravures {
   /* width: 80vh; */
+  /* width: 100%; */
   display: flex;
 }
 
@@ -447,6 +466,12 @@ div.timecode {
 
 
 
+
+
+
+
+
+
 .letters_section {
   background: linear-gradient(to bottom, var(--c-bg), var(--c-white));
   height: 50vh;
@@ -482,23 +507,62 @@ div.timecode {
 
 }
 
+
+.punches {
+  width: 100%;
+  display: flex;
+}
+
+.punches div img {
+  width: 100%;
+}
+
 .letter_spaces {
   display: flex;
   width: 100%;
   justify-content: space-around;
 }
 
+.letter_spaces div {}
+
 .letter_spaces div {
   display: flex;
-  font-family: var(--f-gothic);
+  font-weight: 800;
+  /* font-family: var(--f-gothic); */
   color: var(--c-cuprum);
   justify-content: center;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   background-image: url(./assets/quest-frame.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  font-family: "Cormorant Garamond";
+}
+
+.garamond_gravures {
+  display: flex;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: center;
+  /* width: fit-content; */
+}
+
+
+img.garamond_gravure {
+  /* width: 100%; */
+  /* height: auto; */
+}
+
+.engravings-gravure {
+  /* width: 100%; */
+}
+
+
+.engravings {
+  /* background-image: url(./assets/engravings-bg-img.png); */
+  background-repeat: no-repeat;
+  /* background-size: contain; */
 }
 
 
@@ -507,6 +571,61 @@ div.timecode {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.engraving_tools {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  background-image: url(./assets/eng-tools-bg.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.tools_list {
+  width: 60%;
+  margin: 0;
+  padding-left: 1rem;
+  /* display: flex; */
+}
+
+.tool_item {
+  padding-top: 1rem;
+  /* display: flex; */
+  justify-content: center;
+  text-align: center;
+  /* padding-bottom: 1rem; */
+  /* width: 100%; */
+  /* list-style: circle; */
+}
+
+.tool_item::marker {
+  display: block;
+  font-weight: 600;
+  color: var(--c-cuprum);
+}
+
+.tool_name {
+  font-weight: 600;
+  color: var(--c-cuprum);
+  font-size: x-large;
+}
+
+.tool_item img {
+  /* width: 50%; */
+}
+
+
+.intro_article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -553,3 +672,35 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+
+
+
+
+
+
+.printing-game {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.drawingCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  border: 1px solid #000;
+}
+
+#engravingAnimation {
+  width: 100%;
+  /* height: 500px; */
+  height: 100%;
+  margin: auto;
+}
+
+.result {
+  margin-top: 20px;
+}
