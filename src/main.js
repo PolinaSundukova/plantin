@@ -1,5 +1,20 @@
 import './style.css'
 
+const hamburgerBtn = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.menu_navigation');
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const closeIcon = document.querySelector('.close-icon');
+const overlay = document.querySelector('.overlay');
+
+hamburgerBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  hamburgerIcon.classList.toggle('none');
+  closeIcon.classList.remove('hidden')
+  closeIcon.classList.toggle('block');
+  overlay.classList.toggle('active');
+});
+
+
 
 //pin - for two-halfs img to be stacked while the text is appearing between them
 
