@@ -771,6 +771,8 @@ div.timecode {
   /* align-items: center; */
 }
 
+.letter_spaces div {}
+
 .letter_spaces div {
   display: flex;
   font-weight: 800;
