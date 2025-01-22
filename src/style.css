@@ -46,6 +46,7 @@ h1 {
   font-size: calc(36px + 1vw);
   line-height: 1;
   margin: 0;
+  margin-bottom: 3rem;
 }
 
 h2 {
@@ -65,6 +66,8 @@ h4 {
   font-family: var(--f-gothic);
   font-size: calc(24px + 1.5vw);
   text-align: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 section {
@@ -99,7 +102,7 @@ nav {
   flex-direction: column;
   /* width: 100%; */
   justify-content: space-between;
-  align-items: baseline;
+  align-items: start;
 }
 
 .navigation {
@@ -112,8 +115,11 @@ nav {
   font-size: calc(15px + 1vw);
   color: var(--c-green);
   justify-content: space-around;
+  margin: 0;
 
 }
+
+
 
 .navigation li:hover,
 .menu_navigation li:hover {
@@ -281,7 +287,7 @@ nav {
   background-image: url(./assets/home-bg-mobile.svg);
   background-position: top center;
   background-size: contain;
-  height: 85vh;
+  height: 80vh;
   /* background-size: cover; */
 }
 
@@ -296,7 +302,7 @@ element {
   .header_page {
     background-image: url(./assets/home-bg.svg);
     flex-direction: row;
-
+    height: 100vh;
   }
 
   nav {
@@ -315,7 +321,13 @@ element {
   width: 100%;
 }
 
-.intro {}
+.intro {
+  /* height: 200vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20vh;
+}
 
 .intro_gravures,
 .garamond_gravures,
@@ -474,12 +486,163 @@ div.timecode {
 
 .letters_section {
   background: linear-gradient(to bottom, var(--c-bg), var(--c-white));
-  height: 50vh;
+  position: relative;
+  /* Allow positioning of child elements */
+  width: 100%;
+  /* Fit the parent container */
+  height: 100vh;
+  /* Set a fixed height (adjust as needed) */
+  overflow: hidden;
+
+}
+
+.woodblock_transition {
+  background: linear-gradient(to top, var(--c-bg), var(--c-white));
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.letters_section div,
+.woodblock_transition div {
+  position: absolute;
+  /* Position divs relative to the parent */
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  /* Make each div the full width of the parent */
+  height: 100%;
+  /* Make each div the full height of the parent */
+}
+
+.letters_section div img {
+  position: absolute;
+  /* Position images within the div */
+  top: 0;
+  /* bottom: 0; */
+  /* bottom: 50%; */
+  left: 0;
+  /* width: 100%; */
+  /* Make images fit within the div */
+  max-height: 100%;
+  /* Scale images to fit the div */
+  object-fit: cover;
+  /* Ensure images cover the area without distortion */
+}
+
+.woodblock_transition div img {
+  position: absolute;
+  /* Position images within the div */
+  top: 0;
+  /* bottom: 0; */
+  /* bottom: 50%; */
+  left: 0;
+  max-height: 80%;
+  max-width: 50%;
+  /* width: 100%; */
+  /* Make images fit within the div */
+  /* max-width: 100%;
+  max-height: 100%; */
+  /* Scale images to fit the div */
+  object-fit: cover;
+}
+
+.transition_1 {
+  /* z-index: 3; */
+  top: 5%;
+  left: -45%;
+}
+
+.transition_1 img {
+  opacity: 0.5;
+}
+
+.transition_2 {
+  /* z-index: 4; */
+  left: 10%;
+  top: 20%;
+}
+
+.transition_2 img {
+  opacity: 0.5;
+}
+
+.transition_3 {
+  left: 15%;
+}
+
+.transition_4 {
+  left: 30%;
+  top: 50%;
+}
+
+.transition_5 {
+  left: 40%;
+  top: 20%;
+}
+
+.transition_6 {
+  left: 60%;
+  top: 20%;
+}
+
+.transition_7 {
+  left: 55%;
+}
+
+.transition_8 {
+  left: 80%;
+  /* top: 30%; */
+}
+
+.transition_8 img {
+  opacity: 0.5;
+  /* top: 30%; */
 }
 
 
 
 
+.transition-1 {
+  left: -10%;
+  top: 10%;
+  opacity: 0.5;
+}
+
+.transition-2 {
+  left: 10%;
+  top: 40%;
+  opacity: 0.5;
+}
+
+.transition-3 {
+  left: 10%;
+  top: 0%;
+  /* opacity: 0.5; */
+}
+
+.transition-4 {
+  left: 40%;
+  top: 0%;
+  /* opacity: 0.5; */
+}
+
+.transition-5 {
+  left: 60%;
+  top: 20%;
+  /* opacity: 0.5; */
+}
+
+.transition-5 img {
+  height: 60vh;
+}
+
+.transition-6 {
+  left: 70%;
+  top: 0%;
+  opacity: 0.5;
+}
 
 .typography,
 .engravings {
@@ -533,6 +696,9 @@ div.timecode {
     flex-direction: row;
   }
 
+  .transition_1 {
+    left: -10%;
+  }
 
 }
 
@@ -554,6 +720,9 @@ div.timecode {
   width: 100%;
   height: 100px;
   margin-top: 2rem;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 0;
   /* justify-content: space-around; */
   /* align-items: center; */
 }
@@ -562,13 +731,14 @@ div.timecode {
   display: flex;
   font-weight: 800;
   font-size: calc(20px + 1vw);
-  ;
+  height: 100%;
   /* font-family: var(--f-gothic); */
   color: var(--c-cuprum);
   justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  width: 100%;
+  /* width: 100%; */
+  width: 100px;
   background-image: url(./assets/quest-frame.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -590,6 +760,13 @@ img.garamond_gravure {
   /* height: auto; */
 }
 
+
+.garamond {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .engravings-gravure {
   /* width: 100%; */
 }
@@ -609,16 +786,25 @@ img.garamond_gravure {
   background-position: center;
 }
 
+.engraving_techniques {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .engraving_tools {
   display: flex;
   width: 100%;
+  /* max-width: 50rem; */
+  /* width: fit-content; */
   flex-direction: column;
-  /* justify-content: space-around; */
   align-items: center;
   background-image: url(./assets/eng-tools-bg.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  /* padding: 2.5rem; */
   padding-bottom: 1.5rem;
   padding-top: 1.5rem;
 }
@@ -627,6 +813,7 @@ img.garamond_gravure {
   width: 60%;
   margin: 0;
   padding-left: 1rem;
+  width: fit-content;
   /* display: flex; */
 }
 
@@ -655,6 +842,40 @@ img.garamond_gravure {
 .tool_item img {
   /* width: 50%; */
 }
+
+@media (min-width: 50em) {
+
+  .engraving_techniques {
+    flex-direction: row;
+  }
+
+  .engraving_tools {
+    max-width: 50rem;
+    width: fit-content;
+    padding: 4.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .engraving_tools h4 {
+    font-size: calc(18px + 1vw);
+  }
+
+  .tools_list {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+
+}
+
+
+.woodblocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 
 .intro_article {
@@ -713,20 +934,46 @@ button:focus-visible {
 
 
 
-
+.engraving_workshop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 2rem;
+  width: 100%;
+}
 
 
 .printing-game {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
+  /* height: 80vh; */
+  height: 100%;
+  width: 100%;
+}
+
+.drawing_part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .drawingCanvas {
   width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 }
 
 canvas {
+  /* width: 20rem;
+  height: 20rem; */
   border: 1px solid #000;
 }
 
@@ -739,4 +986,21 @@ canvas {
 
 .result {
   margin-top: 20px;
+
+}
+
+#resultCanvas {
+  background-image: url(./assets/papyrus.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@media (min-width: 50em) {
+
+  .engraving_workshop {
+    flex-direction: row;
+  }
+
 }

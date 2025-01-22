@@ -28,9 +28,9 @@
       <div class="logo"><img src="./src/assets/logo-museum.svg" alt="" width="60"></div>
 
       <ul class="navigation">
-        <li>Biography</li>
-        <li>Typography</li>
-        <li>Engravings</li>
+        <li><a href="#biography">Biography</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#engravings">Engravings</a></li>
         <!-- <li></li> -->
       </ul>
       <div class="overlay"></div>
@@ -46,9 +46,9 @@
         <div class="menu_navigation">
           <h2>Menu</h2>
           <ul>
-            <li>Biography</li>
-            <li>Typography</li>
-            <li>Engravings</li>
+            <li><a href="#biography">Biography</a></li>
+            <li><a href="#typography">Typography</a></li>
+            <li><a href="#engravings">Engravings</a></li>
             <!-- <li></li> -->
           </ul>
           <div class="menu_footer">
@@ -99,7 +99,7 @@
     </section>
 
     <!-- how to avoid horisontal scroll on the rest of webpage bc of width of timeline -->
-    <section class="timeline">
+    <section id="biography" class="timeline">
       <h2 class="flow">Flow of history</h2>
       <!-- grid structure?? -->
       <!-- how to optimise the scroll effect for all the timecodes -->
@@ -189,10 +189,22 @@
 
     </section>
 
-    <section class="letters_section">
-    </section>
+    <div class="letters_section">
 
-    <section class="typography">
+      <div class="transition_1"><img src="./src/assets/letters/R-letter.png" alt=""></div>
+      <div class="transition_2"><img src="./src/assets/letters/text-bg.png" alt=""></div>
+      <div class="transition_3"><img src="./src/assets/letters/A-letter.png" alt=""></div>
+      <div class="transition_4"><img src="./src/assets/letters/S-letter.png" alt=""></div>
+      <div class="transition_5"><img src="./src/assets/letters/B-letter.png" alt=""></div>
+      <div class="transition_6"><img src="./src/assets/letters/G-letter.png" alt=""></div>
+      <div class="transition_7"><img src="./src/assets/letters/vertical-bg.png" alt=""></div>
+      <div class="transition_8"><img src="./src/assets/letters/a-small.png" alt=""></div>
+
+    </div>
+
+    <section id="typography" class="typography">
+
+
       <div class="typography_intro">
         <h2>The Art of Typography</h2>
         <p>Plantin championed the use of high-quality typefaces, recognizing their crucial role in enhancing readability
@@ -255,6 +267,7 @@
             alt="">
           <!-- how to do illustrations cut in two halfs and coming out of viewport -->
         </div>
+
         <h3>And the answer is...</h3>
         <p>Plantin invested heavily in the creation of new typefaces. Skilled artisans, called punchcutters,
           meticulously carved
@@ -272,7 +285,7 @@
       </article>
     </section>
 
-    <section class="engravings">
+    <section id="engravings" class="engravings">
 
       <div class="engravings-gravures">
         <img class="engravings-gravure engravings-gravure--1" src="./src/assets/engravings-img.1.png" width="150"
@@ -297,20 +310,26 @@
 
 
       <article class="engraving_techniques">
-        <h3>Engraving techniques</h3>
-        <p>Engraver made his images using an impression on paper (in a mirror form) from a printing plate — a "board"
-          made of metal
-          with an in-depth (engraved) pattern applied to such a form. With a hardened steel tool called a drill or
-          engraver to
-          carve a pattern on a surface.</p>
-        <p>The greatest merit of his publishing house is also the use of <strong>copper engravings</strong> and the
-          spread of this method in Holland
-          and other European countries.</p>
-        <p>In Italy, copper engraving has been known since the 50s of the XVI century. But Plantin's prints were better:
-          featuring
-          Wierix's engravings, became <strong>renowned for their high quality</strong> and artistic merit, contributing
-          to the spread of this
-          technique throughout Europe.</p>
+        <div class="techniques_content">
+          <h3>Engraving techniques</h3>
+          <p>Engraver made his images using an impression on paper (in a mirror form) from a printing plate — a "board"
+            made of metal
+            with an in-depth (engraved) pattern applied to such a form. With a hardened steel tool called a drill or
+            engraver to
+            carve a pattern on a surface.</p>
+          <p>The greatest merit of his publishing house is also the use of <strong>copper engravings</strong> and the
+            spread of this method in Holland
+            and other European countries.</p>
+          <p>In Italy, copper engraving has been known since the 50s of the XVI century. But Plantin's prints were
+            better:
+            featuring
+            Wierix's engravings, became <strong>renowned for their high quality</strong> and artistic merit,
+            contributing
+            to the spread of this
+            technique throughout Europe.</p>
+        </div>
+
+
         <div class="engraving_tools">
           <h4>Engraving tools</h4>
           <ol class="tools_list">
@@ -351,29 +370,32 @@
 
 
         <div class="printing-game">
-          <!-- Canvas for drawing -->
-          <canvas id="drawingCanvas"></canvas>
 
-          <!-- "Done Drawing" button -->
-          <button id="doneButton">Done Drawing</button>
+          <div class="drawing_part">
+            <!-- Canvas for drawing -->
+            <canvas id="drawingCanvas"></canvas>
 
-          <div id="engravingAnimation"
-            style="display: none; position: absolute; top: 0; left: 0; width: 500px; height: 500px; pointer-events: none;">
+
+            <div id="engravingAnimation"
+              style="display: none; position: absolute; top: 0; left: 0; width: 500px; height: 500px; pointer-events: none;">
+            </div>
+            <!-- "Done Drawing" button -->
+            <button id="doneButton">Done Drawing</button>
           </div>
+
+
 
           <!-- Papyrus Result -->
           <div class="result" style="display: none; position: relative;">
-            <img id="papyrus" src="./src/assets/papyrus.png" alt="Papyrus" style="width: 500px; height: auto;">
-            <canvas id="resultCanvas" width="500" height="500" style="position: absolute; top: 0; left: 0;"></canvas>
+            <!-- <img id="papyrus" src="./src/assets/papyrus.png" alt="Papyrus" style="width: 500px; height: auto;"> -->
+            <canvas id="resultCanvas"></canvas>
           </div>
+
+
         </div>
 
         <!-- Papyrus Result -->
-        <div class="result" style="display: none; position: relative;">
-          <img id="papyrus" src="./src/assets/papyrus.png" alt="Papyrus" style="width: 500px; height: auto;">
-          <canvas id="resultCanvas" width="500" height="500" style="position: absolute; top: 0; left: 0;"></canvas>
-        </div>
-        </div>
+
 
 
 
@@ -381,6 +403,15 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
       </article>
     </section>
+
+    <div class="woodblock_transition">
+      <div class="transition-1"><img src="./src/assets/transition/transition-1.png" alt=""></div>
+      <div class="transition-2"><img src="./src/assets/transition/transition-2.png" alt=""></div>
+      <div class="transition-3"><img src="./src/assets/transition/transition-3.png" alt=""></div>
+      <div class="transition-4"><img src="./src/assets/transition/transition-4.png" alt=""></div>
+      <div class="transition-5"><img src="./src/assets/transition/transition-5.png" alt=""></div>
+      <div class="transition-6"><img src="./src/assets/transition/transition-6.png" alt=""></div>
+    </div>
 
     <section class="legacy">
       <h2>The Legacy of Plantin</h2>
