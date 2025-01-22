@@ -1,10 +1,29 @@
 import './style.css'
 
+
+const links = document.querySelectorAll('.navigation li a');
+
+links.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    const targetId = link.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth'
+      // behavior: 'instant'
+    });
+  });
+});
+
+
 const hamburgerBtn = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.menu_navigation');
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const closeIcon = document.querySelector('.close-icon');
 const overlay = document.querySelector('.overlay');
+const navLinks = document.querySelectorAll('.menu_navigation a');
 
 hamburgerBtn.addEventListener('click', () => {
   navMenu.classList.toggle('active');
@@ -13,6 +32,31 @@ hamburgerBtn.addEventListener('click', () => {
   closeIcon.classList.toggle('block');
   overlay.classList.toggle('active');
 });
+
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    const targetId = link.getAttribute('href').substring(1); // Remove the "#"
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth'
+    });
+
+    // Close the menu and remove overlay after scrolling
+    setTimeout(() => {
+      navMenu.classList.remove('active');
+      hamburgerIcon.classList.remove('none');
+      closeIcon.classList.remove('block')
+      closeIcon.classList.add('none');
+      overlay.classList.remove('active');
+    }, 500);
+  });
+});
+
+
 
 
 
@@ -38,7 +82,7 @@ const timelineScrollAnimation = () => {
       },
       pin: $timeline,
       scrub: 1,
-      markers: true
+      // markers: true
     }
   })
 
@@ -84,9 +128,11 @@ const introAnimation = () => {
 
     .to(".intro_gravure--1", {
       x: '-45vw',
+      opacity: 0,
     })
     .to(".intro_gravure--2", {
       x: '45vw',
+      opacity: 0,
     })
 
   // .to([".intro_gravure--1", ".intro_gravure--2"], {
@@ -101,38 +147,199 @@ const introAnimation = () => {
   // });
 
   ScrollTrigger.create({
-    trigger: ".intro",
+    trigger: ".intro_gravures",
     animation: introGravure,
     start: "top 20%",
-    end: "bottom 80%",
+    end: "bottom 0%",
     scrub: 1,
-    pin: $intro,
-    // markers: true
+    pin: ".intro_gravures",
+    // pin: $intro,
+    markers: true
   });
 }
 
 const introSecondAnimation = () => {
 
   const $intro = document.querySelector(".intro")
-  const $gravures = document.querySelector(".intro_gravures")
+  // const $gravures = document.querySelector(".intro_gravures")
   const introGravure = gsap.timeline()
 
-    .to(".intro_gravures", {
-      //x: 700,
-      scrollTrigger: {
-        trigger: ".logo_intro",
-        start: "top 20%",
-        end: "bottom 30%",
-        // toggleClass: "white",
-        markers: { fontSize: "25px", fontWeight: "bold" },
-        scrub: true,
-        pin: ".intro_gravures",
-        pinSpacing: false, //set to true to see extra padding added
-      },
-    });
+    .from(".intro_article", {
+      opacity: 0,
+    })
 
+
+  ScrollTrigger.create({
+    trigger: ".intro_article",
+    animation: introGravure,
+    start: "top 60%",
+    end: "bottom 50%",
+    scrub: 1,
+    // pin: ".intro_gravures",
+    // pin: $intro,
+    // markers: true
+  });
 }
 
+
+// const introSecondAnimation = () => {
+
+//   const $intro = document.querySelector(".intro")
+//   const $gravures = document.querySelector(".intro_gravures")
+//   const introGravure = gsap.timeline()
+
+//     .to(".intro_gravures", {
+//       //x: 700,
+//       scrollTrigger: {
+//         trigger: ".logo_intro",
+//         start: "top 20%",
+//         end: "bottom 30%",
+//         // toggleClass: "white",
+//         // markers: { fontSize: "25px", fontWeight: "bold" },
+//         scrub: true,
+//         pin: ".intro_gravures",
+//         // pinSpacing: false, //set to true to see extra padding added
+//       },
+//     });
+
+// }
+
+
+
+
+//letters transition
+const transitionAnimation = () => {
+
+  // const $lettersSection = document.querySelector(".letters_section")
+  // const $gravures = document.querySelector(".intro_gravures")
+  const lettersMovement = gsap.timeline()
+
+    .from(".transition_1", {
+      y: 400,
+      duration: 20,
+      opacity: 0,
+    })
+    .from(".transition_7", {
+      y: 200,
+      opacity: 0,
+      duration: 20,
+    })
+    .from(".transition_3", {
+      y: 100,
+      duration: 20,
+      opacity: 0,
+    })
+    .from(".transition_8", {
+      y: 400,
+      duration: 20,
+      opacity: 0,
+    })
+    .from(".transition_2", {
+      y: 300,
+      duration: 20,
+      opacity: 0,
+    })
+
+    .from(".transition_6", {
+      y: 300,
+      duration: 20,
+      opacity: 0,
+    })
+    .from(".transition_5", {
+      y: 200,
+      duration: 20,
+      opacity: 0,
+    })
+
+
+    .from(".transition_4", {
+      y: 100,
+      opacity: 0,
+      duration: 20,
+    })
+
+
+  ScrollTrigger.create({
+    trigger: ".letters_section",
+    animation: lettersMovement,
+    // start: "top 60%",
+    start: "top 0%",
+    end: "bottom 10%",
+    scrub: 1,
+    pin: ".letters_section",
+    // markers: true
+  });
+}
+
+const transitionSecondAnimation = () => {
+
+  // const $lettersSection = document.querySelector(".letters_section")
+  // const $gravures = document.querySelector(".intro_gravures")
+  const lettersMovement = gsap.timeline()
+
+    .from(".transition-1", {
+      y: 400,
+      duration: 20,
+      opacity: 0,
+    })
+    // .from(".transition-7", {
+    //   y: 200,
+    //   opacity: 0,
+    //   duration: 20,
+    // })
+    .from(".transition-3", {
+      y: 100,
+      duration: 20,
+      opacity: 0,
+    })
+    // .from(".transition-8", {
+    //   y: 400,
+    //   duration: 20,
+    //   opacity: 0,
+    // })
+    .from(".transition-2", {
+      y: 300,
+      duration: 20,
+      opacity: 0,
+    })
+
+    .from(".transition-6", {
+      y: 300,
+      duration: 20,
+      opacity: 0,
+    })
+    .from(".transition-5", {
+      y: 200,
+      duration: 20,
+      opacity: 0,
+    })
+
+
+    .from(".transition-4", {
+      y: 100,
+      opacity: 0,
+      duration: 20,
+    })
+
+
+  ScrollTrigger.create({
+    trigger: ".woodblock_transition",
+    animation: lettersMovement,
+    // start: "top 60%",
+    start: "top 0%",
+    end: "bottom 10%",
+    scrub: 1,
+    pin: ".woodblock_transition",
+    // markers: true
+  });
+}
+
+
+
+
+
+
+//typography game
 
 document.addEventListener("DOMContentLoaded", () => {
   // Map punch classes to letter spaces
@@ -194,7 +401,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
+//printing game
 
 document.addEventListener("DOMContentLoaded", () => {
   const drawingCanvas = document.getElementById("drawingCanvas");
@@ -285,8 +492,9 @@ const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   // gsap.registerPlugin(MotionPathPlugin);
   timelineScrollAnimation();
-  // introAnimation();
-  // introSecondAnimation();
-
+  transitionAnimation();
+  introAnimation();
+  introSecondAnimation();
+  transitionSecondAnimation();
 }
 init();
