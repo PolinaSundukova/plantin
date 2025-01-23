@@ -31,6 +31,10 @@ a:hover {
   color: var(--c-white);
 }
 
+strong {
+  font-weight: 700;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -50,6 +54,8 @@ body {
 h1 {
   /* font-size: 3.2em; */
   font-size: calc(36px + 1vw);
+  font-family: var(--f-text);
+  font-weight: 800;
   line-height: 1;
   margin: 0;
   margin-bottom: 3rem;
@@ -57,6 +63,8 @@ h1 {
 
 h2 {
   font-family: var(--f-gothic);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   font-size: calc(40px + 1.5vw);
   font-weight: 400;
   text-align: center;
@@ -66,6 +74,8 @@ h3 {
   font-family: var(--f-gothic);
   font-size: calc(32px + 1.5vw);
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 h4 {
@@ -99,28 +109,35 @@ p {
   max-width: 580px;
   /* width: 300px; */
   max-inline-size: 66ch;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   /* font-size: clamp(1rem,  2rem); */
 }
 
 nav {
   display: flex;
   margin: 1rem;
-  flex-direction: column;
+  /* width: 100%; */
+  /* flex-direction: column; */
   /* width: 100%; */
   justify-content: space-between;
-  align-items: start;
+  /* align-items: start; */
 }
 
 .navigation {
   display: flex;
   /* display: none; */
   flex-direction: row;
-  width: 100%;
+  /* width: 100%; */
+  gap: 20vw;
   padding: 0;
   list-style: none;
   font-size: calc(15px + 1vw);
   color: var(--c-green);
-  justify-content: space-around;
+  /* justify-content: space-around; */
   margin: 0;
 
 }
@@ -134,7 +151,7 @@ nav {
 }
 
 .hamburger_menu {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: end;
   align-items: end;
@@ -224,6 +241,10 @@ nav {
     display: none;
   }
 
+  .hamburger_menu {
+    display: flex;
+  }
+
   .hamburger {
     display: block;
     z-index: 2;
@@ -297,9 +318,7 @@ nav {
   /* background-size: cover; */
 }
 
-.plantin-portret {
-  /* width: 20vw; */
-}
+
 
 /* ///////////option for responsiveness (background img)?
 element {
@@ -320,6 +339,12 @@ element {
     flex-direction: row;
   }
 
+  .plantin-portret {
+    width: 40vw;
+
+
+  }
+
 
 }
 
@@ -337,6 +362,7 @@ element {
   flex-direction: column;
   justify-content: space-between;
   gap: 20vh;
+  margin-bottom: 30vh;
 }
 
 .intro_gravures,
@@ -658,7 +684,8 @@ div.timecode {
 }
 
 .typography,
-.engravings {
+.engravings,
+.woodblock_section {
   background-color: var(--c-white);
   color: var(--c-dark);
   font-weight: 500;
@@ -669,14 +696,17 @@ div.timecode {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   background-image: url(./assets/typography-bg.svg);
   background-size: contain;
   background-position: top;
   background-position: center;
+  height: 100vh;
   /* padding: 0; */
   background-repeat: no-repeat;
 }
+
 
 
 
@@ -684,6 +714,7 @@ div.timecode {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100vh;
 }
 
 .typing_quest p {
@@ -784,26 +815,53 @@ img.garamond_gravure {
   /* width: 100%; */
 }
 
+.engravings-woodblocks {
+  background-color: var(--c-white);
+}
+
 
 .engravings {
   /* background-image: url(./assets/engravings-bg-img.png); */
   background-repeat: no-repeat;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(to bottom, transparent 0%, var(--c-white)10%);
   /* background-size: contain; */
 }
 
 
 .engravings_intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url(./assets/engravings-bg.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100vh;
 }
 
 .engraving_techniques {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: space-around;
+  /* gap: 2rem; */
+}
+
+/* .techniques_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+} */
+
+.techniques_content h3 {
+  text-align: left;
+}
+
+.techniques_content p {
+  max-width: 480px;
 }
 
 .engraving_tools {
@@ -817,24 +875,37 @@ img.garamond_gravure {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  gap: 1rem;
   /* padding: 2.5rem; */
-  padding-bottom: 1.5rem;
-  padding-top: 1.5rem;
+  /* padding-bottom: 1.5rem;
+  padding-top: 1.5rem; */
+  padding: 4rem;
+}
+
+.engraving_tools h4 {
+  font-size: calc(18px + 1vw);
 }
 
 .tools_list {
+  list-style: decimal;
+  /* list-style-position: outside; */
+  /* list-style-position: inherit; */
+  /* text-align: end; */
   width: 60%;
   margin: 0;
   padding-left: 1rem;
   width: fit-content;
+  /* text-align: center; */
   /* display: flex; */
 }
 
 .tool_item {
   padding-top: 1rem;
+  align-self: center;
+  /* margin: 0; */
   /* display: flex; */
-  justify-content: center;
-  text-align: center;
+  /* justify-content: center; */
+  /* text-align: center; */
   /* padding-bottom: 1rem; */
   /* width: 100%; */
   /* list-style: circle; */
@@ -848,12 +919,14 @@ img.garamond_gravure {
 
 .tool_name {
   font-weight: 600;
+  text-align: center;
   color: var(--c-cuprum);
   font-size: x-large;
 }
 
 .tool_item img {
   /* width: 50%; */
+  /* align-self: center; */
 }
 
 @media (min-width: 50em) {
@@ -865,29 +938,36 @@ img.garamond_gravure {
   .engraving_tools {
     max-width: 50rem;
     width: fit-content;
-    padding: 4.5rem;
+    /* padding: 4.5rem;
     padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
+    padding-top: 1.5rem; */
   }
 
-  .engraving_tools h4 {
-    font-size: calc(18px + 1vw);
-  }
 
-  .tools_list {
+
+  /* .tools_list {
     margin-right: 1rem;
     margin-left: 1rem;
-  }
+  } */
 
 
 }
-
 
 .woodblocks {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: url(./assets/woodblocks.svg);
+  background-size: contain;
+  background-position: top;
+  background-position: center;
+  height: 100vh;
+  /* padding: 0; */
+  background-repeat: no-repeat;
 }
+
 
 
 
@@ -896,6 +976,7 @@ img.garamond_gravure {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 
@@ -966,8 +1047,8 @@ button:focus-visible {
   justify-content: center;
   margin-top: 20px;
   /* height: 80vh; */
-  height: 100%;
-  width: 100%;
+  /* height: 100%; */
+  /* width: 100%; */
 }
 
 .drawing_part {
@@ -982,31 +1063,45 @@ button:focus-visible {
   width: 100%;
   /* width: 100%;
   height: 100%; */
+
 }
 
 canvas {
+  background-color: var(--c-cuprum);
+  background: var(--c-cuprum);
+  border: 2px solid var(--c-cuprum);
   /* width: 20rem;
   height: 20rem; */
-  border: 1px solid #000;
+}
+
+#anim-box {
+  background: none;
+  border: none;
 }
 
 #engravingAnimation {
-  width: 100%;
+  position: absolute;
+  display: none;
+  /* width: 100%; */
   /* height: 500px; */
-  height: 100%;
-  margin: auto;
+  /* height: 100%; */
+  /* margin: auto; */
 }
 
 .result {
-  margin-top: 20px;
-
-}
-
-#resultCanvas {
+  padding: 2.5rem;
+  display: none;
+  /* margin-top: 20px; */
+  /* position: relative; */
   background-image: url(./assets/papyrus.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#resultCanvas {
+  border: none;
+  scale: 0.7;
 }
 
 
