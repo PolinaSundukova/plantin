@@ -1,3 +1,4 @@
+import './reset.css'
 import './style.css'
 
 
@@ -133,7 +134,8 @@ const introAnimation = () => {
     .to(".intro_gravure--2", {
       x: '45vw',
       opacity: 0,
-    })
+    }, "<") // trigger second at the
+  //
 
   // .to([".intro_gravure--1", ".intro_gravure--2"], {
   //   x: -100,
@@ -154,7 +156,7 @@ const introAnimation = () => {
     scrub: 1,
     pin: ".intro_gravures",
     // pin: $intro,
-    markers: true
+    // markers: true
   });
 }
 
@@ -180,29 +182,6 @@ const introSecondAnimation = () => {
     // markers: true
   });
 }
-
-
-// const introSecondAnimation = () => {
-
-//   const $intro = document.querySelector(".intro")
-//   const $gravures = document.querySelector(".intro_gravures")
-//   const introGravure = gsap.timeline()
-
-//     .to(".intro_gravures", {
-//       //x: 700,
-//       scrollTrigger: {
-//         trigger: ".logo_intro",
-//         start: "top 20%",
-//         end: "bottom 30%",
-//         // toggleClass: "white",
-//         // markers: { fontSize: "25px", fontWeight: "bold" },
-//         scrub: true,
-//         pin: ".intro_gravures",
-//         // pinSpacing: false, //set to true to see extra padding added
-//       },
-//     });
-
-// }
 
 
 
@@ -403,7 +382,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //printing game
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {  //removeDOM
   const drawingCanvas = document.getElementById("drawingCanvas");
   const ctx = drawingCanvas.getContext("2d");
   const resultCanvas = document.getElementById("resultCanvas");
@@ -423,7 +402,11 @@ document.addEventListener("DOMContentLoaded", () => {
   drawingCanvas.addEventListener("touchmove", draw);
   drawingCanvas.addEventListener("touchend", stopDrawing);
 
+
+  // remove functions - put in init
+
   function startDrawing(e) {
+    e.preventDefault();
     isDrawing = true;
     ctx.beginPath();
     ctx.moveTo(getX(e), getY(e));
@@ -431,6 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function draw(e) {
     if (!isDrawing) return;
+    e.preventDefault();
     ctx.lineTo(getX(e), getY(e));
     ctx.strokeStyle = "black"; // Customize line color
     ctx.lineWidth = 2; // Customize line width
@@ -438,6 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function stopDrawing() {
+    e.preventDefault();
     isDrawing = false;
     ctx.closePath();
   }

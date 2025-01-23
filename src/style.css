@@ -11,6 +11,12 @@
 
 }
 
+.site-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
 a {
   /* font-weight: 500; */
   color: var(--c-green);
@@ -291,6 +297,10 @@ nav {
   /* background-size: cover; */
 }
 
+.plantin-portret {
+  /* width: 20vw; */
+}
+
 /* ///////////option for responsiveness (background img)?
 element {
   background-image: image-set(small-image.png 1x,
@@ -350,7 +360,8 @@ element {
   align-items: baseline;
   justify-content: space-between;
   gap: 6rem;
-  overflow-x: hidden;
+  /* overflow-x: hidden;
+  max-width: 100vw; */
 }
 
 .timecodes {
@@ -605,10 +616,12 @@ div.timecode {
 
 
 .transition-1 {
+  width: 50vw;
   left: -10%;
   top: 10%;
   opacity: 0.5;
 }
+
 
 .transition-2 {
   left: 10%;
