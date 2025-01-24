@@ -1,6 +1,7 @@
 import './reset.css'
 import './style.css'
 import { DotLottie } from '@lottiefiles/dotlottie-web';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 new DotLottie({
   autoplay: true,
