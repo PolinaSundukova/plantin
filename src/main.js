@@ -75,20 +75,20 @@ navLinks.forEach(link => {
 
 
 
-const hamburgerBtn = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.menu_navigation');
-const hamburgerIcon = document.querySelector('.hamburger-icon');
-const closeIcon = document.querySelector('.close-icon');
-const overlay = document.querySelector('.overlay');
-const navLinks = document.querySelectorAll('.menu_navigation a');
+// const hamburgerBtn = document.querySelector('.hamburger');
+// const navMenu = document.querySelector('.menu_navigation');
+// const hamburgerIcon = document.querySelector('.hamburger-icon');
+// const closeIcon = document.querySelector('.close-icon');
+// const overlay = document.querySelector('.overlay');
+// const navLinks = document.querySelectorAll('.menu_navigation a');
 
-hamburgerBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  hamburgerIcon.classList.toggle('none');
-  closeIcon.classList.remove('hidden')
-  closeIcon.classList.toggle('block');
-  overlay.classList.toggle('active');
-});
+// hamburgerBtn.addEventListener('click', () => {
+//   navMenu.classList.toggle('active');
+//   hamburgerIcon.classList.toggle('none');
+//   closeIcon.classList.remove('hidden')
+//   closeIcon.classList.toggle('block');
+//   overlay.classList.toggle('active');
+// });
 
 
 

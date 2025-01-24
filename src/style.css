@@ -465,12 +465,12 @@ element {
   order: 2;
 }
 
-div.timecode {
+/* div.timecode {
   /* padding-top: 3rem; */
-  /* height: 100vh; */
+/* height: 100vh; */
 }
 
-.timecode p {
+*/ .timecode p {
   /* width: 300px; */
   max-width: 300px;
   min-width: 250px;
@@ -799,10 +799,10 @@ div.timecode {
 }
 
 
-img.garamond_gravure {
-  /* width: 100%; */
-  /* height: auto; */
-}
+/* img.garamond_gravure { */
+/* width: 100%; */
+/* height: auto; */
+/* } */
 
 
 .garamond {
@@ -811,9 +811,9 @@ img.garamond_gravure {
   align-items: center;
 }
 
-.engravings-gravure {
-  /* width: 100%; */
-}
+/* .engravings-gravure {
+  /* width: 100%; 
+} */
 
 .engravings-woodblocks {
   background-color: var(--c-white);
@@ -924,10 +924,10 @@ img.garamond_gravure {
   font-size: x-large;
 }
 
-.tool_item img {
-  /* width: 50%; */
-  /* align-self: center; */
-}
+/* .tool_item img { */
+/* width: 50%; */
+/* align-self: center; */
+
 
 @media (min-width: 50em) {
 
