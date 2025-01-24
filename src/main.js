@@ -675,7 +675,21 @@ const woodblockWorkshop = () => {
 
     animationLottie.addEventListener("complete", () => {
       console.log("Animation complete!");
+      drawingCanvas.style.display = "none"; // Hide animation
+      animationCanvas.style.display = "none"; // Hide animation
+      doneButton.style.display = "none";
+      resultDiv.style.display = "block"; // Show the result
+      console.log('the picture was printed')
+
+      // Mirror the drawing and display it on the papyrus
+      const imageData = ctx.getImageData(0, 0, drawingCanvas.width, drawingCanvas.height);
+      resultCtx.save();
+      resultCtx.scale(-1, 1); // Mirror horizontally
+      resultCtx.drawImage(drawingCanvas, -drawingCanvas.width, 0);
+      resultCtx.restore();
     });
+
+
 
   });
 
