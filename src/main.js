@@ -1,7 +1,9 @@
 import './reset.css'
 import './style.css'
+import { ScrollTrigger } from "gsap/all";
 import { DotLottie } from '@lottiefiles/dotlottie-web';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+
 
 new DotLottie({
   autoplay: true,
@@ -9,7 +11,7 @@ new DotLottie({
   // mode: "reverse",
   // marker: "box", // box, ball, hexa
   canvas: document.querySelector("#anim-box"),
-  src: "./assets/engraving.json",
+  src: "assets/engraving.json",
 });
 
 
