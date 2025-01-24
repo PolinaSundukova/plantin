@@ -615,7 +615,7 @@ const engravingTransitionAnimation = () => {
         renderer: "svg",
         loop: false,
         autoplay: true,
-        path: "./src/assets/engraving.json", // Lottie animation JSON file
+        path: "assets/engraving.json", // Lottie animation JSON file
       });
 
       // When the animation finishes
