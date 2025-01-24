@@ -373,7 +373,7 @@ const engravingsBgAnimation = () => {
     scrub: 1,
     pin: ".engravings_intro",
     pinSpacing: true,
-    markers: true
+    // markers: true
   });
 }
 
