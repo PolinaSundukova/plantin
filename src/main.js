@@ -6,7 +6,14 @@ import { DotLottie } from '@lottiefiles/dotlottie-web';
 
 
 
-
+// new DotLottie({
+//   autoplay: true,
+//   loop: false,
+//   // mode: "reverse",
+//   // marker: "box", // box, ball, hexa
+//   canvas: document.querySelector("#anim-box"),
+//   src: "assets/engraving.json",
+// });
 
 
 
@@ -535,14 +542,7 @@ const engravingTransitionAnimation = () => {
 
 
 
-  new DotLottie({
-    autoplay: true,
-    loop: false,
-    // mode: "reverse",
-    // marker: "box", // box, ball, hexa
-    canvas: document.querySelector("#anim-box"),
-    src: "assets/engraving.json",
-  });
+
 
 
   //printing game
@@ -557,6 +557,8 @@ const engravingTransitionAnimation = () => {
     const doneButton = document.getElementById("doneButton");
     const engravingAnimation = document.getElementById("engravingAnimation");
     const resultDiv = document.querySelector(".result");
+    const animationCanvas = document.getElementById("anim-box")
+    let animationLottie;
 
     let isDrawing = false;
 
@@ -604,65 +606,79 @@ const engravingTransitionAnimation = () => {
     drawingCanvas.addEventListener("touchmove", draw);
     drawingCanvas.addEventListener("touchend", stopDrawing);
 
-    // Handle "Done Drawing" button click
+
+
+
+
+
+    ///// for option 3 (remove when not needed)
+
+    // doneButton.addEventListener("click", () => {
+    //   engravingAnimation.style.display = "block";
+
+    //   ///////////option 1
+    //   // Load the Lottie animation
+    //   // const animation = lottie.loadAnimation({
+    //   //   // container: engravingAnimation, // Target the Lottie container
+    //   //   // renderer: "svg",
+    //   //   loop: false,
+    //   //   autoplay: true,
+    //   //   path: "assets/engraving.json", // Lottie animation JSON file
+
+    //   /////////option 2
+    //   // const animationLottie = () => {
+    //   //   lottie.loadAnimation({
+    //   //     // container: engravingAnimation, // Target the Lottie container
+    //   //     // renderer: "svg",
+    //   //     canvas: document.querySelector("#anim-box"),
+    //   //     loop: false,
+    //   //     autoplay: true,
+    //   //     path: "assets/engraving.json", // Lottie animation JSON file
+    //   //   });
+    //   // }
+
+    //   animationLottie.addEventListener("complete", () => {
+    //     drawingCanvas.style.display = "none"; // Hide animation
+    //     engravingAnimation.style.display = "none"; // Hide animation
+    //     doneButton.style.display = "none";
+    //     resultDiv.style.display = "block"; // Show the result
+    //     console.log('the picture was printed')
+
+    //     // Mirror the drawing and display it on the papyrus
+    //     const imageData = ctx.getImageData(0, 0, drawingCanvas.width, drawingCanvas.height);
+    //     resultCtx.save();
+    //     resultCtx.scale(-1, 1); // Mirror horizontally
+    //     resultCtx.drawImage(drawingCanvas, -drawingCanvas.width, 0);
+    //     resultCtx.restore();
+    //   });
+    // });
+
+
+
+
+
+    //////////option 3
+
+
+
     doneButton.addEventListener("click", () => {
-      // Show the Lottie animation container
-      engravingAnimation.style.display = "block";
 
+      animationCanvas.style.display = "block";
 
-
-
-
-
-
-      // Load the Lottie animation
-      // const animation = lottie.loadAnimation({
-      //   // container: engravingAnimation, // Target the Lottie container
-      //   // renderer: "svg",
-      //   loop: false,
-      //   autoplay: true,
-      //   path: "assets/engraving.json", // Lottie animation JSON file
-
-      //   new DotLottie({
-      //     autoplay: true,
-      //     loop: false,
-      //     // mode: "reverse",
-      //     // marker: "box", // box, ball, hexa
-      //     canvas: document.querySelector("#anim-box"),
-      //     src: "assets/engraving.json",
-      //   })
-      // });
-
-      const animationLottie = () => {
-
-        lottie.loadAnimation({
-          // container: engravingAnimation, // Target the Lottie container
-          // renderer: "svg",
-          canvas: document.querySelector("#anim-box"),
-          loop: false,
-          autoplay: true,
-          path: "assets/engraving.json", // Lottie animation JSON file
-
-        });
-      }
-
-
-      // When the animation finishes
-      animationLottie.addEventListener("complete", () => {
-        drawingCanvas.style.display = "none"; // Hide animation
-        engravingAnimation.style.display = "none"; // Hide animation
-        doneButton.style.display = "none";
-        resultDiv.style.display = "block"; // Show the result
-        console.log('the picture was printed')
-
-        // Mirror the drawing and display it on the papyrus
-        const imageData = ctx.getImageData(0, 0, drawingCanvas.width, drawingCanvas.height);
-        resultCtx.save();
-        resultCtx.scale(-1, 1); // Mirror horizontally
-        resultCtx.drawImage(drawingCanvas, -drawingCanvas.width, 0);
-        resultCtx.restore();
+      const animationLottie = new DotLottie({
+        autoplay: true,
+        loop: false,     // Disable looping
+        canvas: document.querySelector("#anim-box"), // Target the canvas container
+        src: "assets/engraving.json" // Path to the Lottie animation file
       });
+
+      animationLottie.addEventListener("complete", () => {
+        console.log("Animation complete!");
+      });
+
     });
+
+
   }
   // });
 
