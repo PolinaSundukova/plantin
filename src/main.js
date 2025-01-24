@@ -709,7 +709,7 @@ const init = () => {
   engravingTransitionAnimation();
   engravingsBgAnimation();
   woodblockBgAnimation();
-  // woodblockWorkshop();
+  woodblockWorkshop();
   transitionSecondAnimation();
 }
 init();
