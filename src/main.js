@@ -5,14 +5,7 @@ import { DotLottie } from '@lottiefiles/dotlottie-web';
 
 
 
-new DotLottie({
-  autoplay: true,
-  loop: true,
-  // mode: "reverse",
-  // marker: "box", // box, ball, hexa
-  canvas: document.querySelector("#anim-box"),
-  src: "assets/engraving.json",
-});
+
 
 
 
@@ -542,6 +535,15 @@ const engravingTransitionAnimation = () => {
 
 
 
+  new DotLottie({
+    autoplay: true,
+    loop: false,
+    // mode: "reverse",
+    // marker: "box", // box, ball, hexa
+    canvas: document.querySelector("#anim-box"),
+    src: "assets/engraving.json",
+  });
+
 
   //printing game
 
@@ -606,20 +608,47 @@ const engravingTransitionAnimation = () => {
     doneButton.addEventListener("click", () => {
       // Show the Lottie animation container
       engravingAnimation.style.display = "block";
-      console.log('engraving video playing')
+
+
+
+
+
+
 
       // Load the Lottie animation
-      const animation = lottie.loadAnimation({
+      // const animation = lottie.loadAnimation({
+      //   // container: engravingAnimation, // Target the Lottie container
+      //   // renderer: "svg",
+      //   loop: false,
+      //   autoplay: true,
+      //   path: "assets/engraving.json", // Lottie animation JSON file
 
-        container: engravingAnimation, // Target the Lottie container
-        renderer: "svg",
-        loop: false,
-        autoplay: true,
-        path: "assets/engraving.json", // Lottie animation JSON file
-      });
+      //   new DotLottie({
+      //     autoplay: true,
+      //     loop: false,
+      //     // mode: "reverse",
+      //     // marker: "box", // box, ball, hexa
+      //     canvas: document.querySelector("#anim-box"),
+      //     src: "assets/engraving.json",
+      //   })
+      // });
+
+      const animationLottie = () => {
+
+        lottie.loadAnimation({
+          // container: engravingAnimation, // Target the Lottie container
+          // renderer: "svg",
+          canvas: document.querySelector("#anim-box"),
+          loop: false,
+          autoplay: true,
+          path: "assets/engraving.json", // Lottie animation JSON file
+
+        });
+      }
+
 
       // When the animation finishes
-      animation.addEventListener("complete", () => {
+      animationLottie.addEventListener("complete", () => {
         drawingCanvas.style.display = "none"; // Hide animation
         engravingAnimation.style.display = "none"; // Hide animation
         doneButton.style.display = "none";
