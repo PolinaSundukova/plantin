@@ -16,7 +16,7 @@ import { DotLottie } from '@lottiefiles/dotlottie-web';
 // });
 
 
-
+console.log('js body console test')
 
 
 const links = document.querySelectorAll('.navigation li a');
@@ -26,7 +26,7 @@ links.forEach(link => {
     event.preventDefault(); // Prevent default anchor behavior
     const targetId = link.getAttribute('href');
     const targetElement = document.querySelector(targetId);
-
+    console.log('nav console test')
     window.scrollTo({
       top: targetElement.offsetTop,
       behavior: 'smooth'
@@ -49,6 +49,7 @@ hamburgerBtn.addEventListener('click', () => {
   closeIcon.classList.remove('hidden')
   closeIcon.classList.toggle('block');
   overlay.classList.toggle('active');
+  console.log('hamburger console test')
 });
 
 
@@ -100,7 +101,7 @@ const timelineScrollAnimation = () => {
   const timecodes = gsap.utils.toArray(".timeline .timecode");
   const $timecodes = document.querySelector(".timecodes");
   // const $flow = document.querySelector(".flow");
-
+  console.log('timeline console test')
   const $timeline = document.querySelector(".timeline");
 
   console.log(timecodes.length)
@@ -155,7 +156,7 @@ const timelineScrollAnimation = () => {
 
 
 const introAnimation = () => {
-
+  console.log('intro console test')
   const $intro = document.querySelector(".intro")
   const $gravures = document.querySelector(".intro_gravures")
   const introGravure = gsap.timeline()
@@ -562,7 +563,7 @@ const engravingTransitionAnimation = () => {
 
     let isDrawing = false;
 
-
+    console.log('MAIN workshop console test')
 
 
     // remove functions - put in init
@@ -693,6 +694,7 @@ const engravingTransitionAnimation = () => {
 
   const init = () => {
     gsap.registerPlugin(ScrollTrigger);
+    console.log('init console test')
     // gsap.registerPlugin(MotionPathPlugin);
     timelineScrollAnimation();
     transitionAnimation();
