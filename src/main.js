@@ -6,16 +6,6 @@ import { DotLottie } from '@lottiefiles/dotlottie-web';
 
 
 
-// new DotLottie({
-//   autoplay: true,
-//   loop: false,
-//   // mode: "reverse",
-//   // marker: "box", // box, ball, hexa
-//   canvas: document.querySelector("#anim-box"),
-//   src: "assets/engraving.json",
-// });
-
-
 console.log('js body console test')
 
 
@@ -30,12 +20,10 @@ links.forEach(link => {
     window.scrollTo({
       top: targetElement.offsetTop,
       behavior: 'smooth'
-      // behavior: 'instant'
     });
   });
 });
 
-// const hamburgerMenu = document.querySelector('.hamburger_menu')
 const hamburgerBtn = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.menu_navigation');
 const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -79,32 +67,13 @@ navLinks.forEach(link => {
 
 
 
-// const hamburgerBtn = document.querySelector('.hamburger');
-// const navMenu = document.querySelector('.menu_navigation');
-// const hamburgerIcon = document.querySelector('.hamburger-icon');
-// const closeIcon = document.querySelector('.close-icon');
-// const overlay = document.querySelector('.overlay');
-// const navLinks = document.querySelectorAll('.menu_navigation a');
-
-// hamburgerBtn.addEventListener('click', () => {
-//   navMenu.classList.toggle('active');
-//   hamburgerIcon.classList.toggle('none');
-//   closeIcon.classList.remove('hidden')
-//   closeIcon.classList.toggle('block');
-//   overlay.classList.toggle('active');
-// });
-
-
-
 
 const timelineScrollAnimation = () => {
   const timecodes = gsap.utils.toArray(".timeline .timecode");
   const $timecodes = document.querySelector(".timecodes");
-  // const $flow = document.querySelector(".flow");
   console.log('timeline console test')
   const $timeline = document.querySelector(".timeline");
 
-  // console.log(timecodes.length)
 
   let scrollTween = gsap.to(timecodes, {
     xPercent: -100 * (timecodes.length + 2),
@@ -115,7 +84,6 @@ const timelineScrollAnimation = () => {
       end: () => {
         return "+=" + ($timeline.offsetWidth * 10)
       },
-      // end: "bottom 0%",
       pin: $timeline,
       scrub: 0.5,
       // markers: true
@@ -123,27 +91,19 @@ const timelineScrollAnimation = () => {
   })
 
   timecodes.forEach(element => {
-    // const title = element.querySelector("h1");
     const paragraph = element.querySelectorAll("p");
-    //
     let tl = gsap.timeline()
-      // .from(title, {
-      //   opacity: 0,
-      //   x: "-50",
-      //   duration: 0.5
-      // })
+
       .from(paragraph, {
         opacity: 0,
         y: -100,
-        // y: "+30",
         duration: 2
       })
     ScrollTrigger.create({
       trigger: element,
       containerAnimation: scrollTween,
       animation: tl,
-      // start: "top 100%",
-      // end: "bottom -100%",
+
       start: "left 80%",
       end: "right 90%",
       scrub: 1,
@@ -179,7 +139,6 @@ const introAnimation = () => {
     end: "bottom 0%",
     scrub: 1,
     pin: ".intro_gravures",
-    // pin: $intro,
     // markers: true
   });
 }
@@ -187,7 +146,6 @@ const introAnimation = () => {
 const introSecondAnimation = () => {
 
   const $intro = document.querySelector(".intro")
-  // const $gravures = document.querySelector(".intro_gravures")
   const introGravure = gsap.timeline()
 
     .from(".intro_article", {
@@ -201,8 +159,7 @@ const introSecondAnimation = () => {
     start: "top 60%",
     end: "bottom 50%",
     scrub: 1,
-    // pin: ".intro_gravures",
-    // pin: $intro,
+
     // markers: true
   });
 }
@@ -213,8 +170,7 @@ const introSecondAnimation = () => {
 //letters transition
 const transitionAnimation = () => {
 
-  // const $lettersSection = document.querySelector(".letters_section")
-  // const $gravures = document.querySelector(".intro_gravures")
+
   const lettersMovement = gsap.timeline()
 
     .from(".transition_1", {
@@ -265,11 +221,9 @@ const transitionAnimation = () => {
   ScrollTrigger.create({
     trigger: ".letters_section",
     animation: lettersMovement,
-    // start: "top 60%",
     start: "top 50%",
     end: "bottom 100%",
     scrub: 1,
-    // pin: ".letters_section",
     // markers: true
   });
 }
@@ -279,7 +233,6 @@ const transitionAnimation = () => {
 
 const typographyAnimation = () => {
 
-  // const $intro = document.querySelector(".intro")
   const $garamondGravures = document.querySelector(".garamond_gravures")
   const garamondGravure = gsap.timeline()
 
@@ -300,15 +253,13 @@ const typographyAnimation = () => {
     end: "bottom 0%",
     scrub: 1,
     pin: $garamondGravures,
-    // pin: $intro,
     // markers: true
   });
 }
 
 const typographySecondAnimation = () => {
 
-  // const $intro = document.querySelector(".intro")
-  // const $gravures = document.querySelector(".intro_gravures")
+
   const typographyGravure = gsap.timeline()
 
     .from(".garamond", {
@@ -322,8 +273,7 @@ const typographySecondAnimation = () => {
     start: "top 60%",
     end: "bottom 50%",
     scrub: 1,
-    // pin: ".engravings-gravures",
-    // pin: $intro,
+
     // markers: true
   });
 }
@@ -341,7 +291,6 @@ const engravingTransitionAnimation = () => {
       trigger: ".engravings",
       start: "top 90%",
       end: "top 0%",
-      // toggleClass: "white",
       // markers: { fontSize: "25px", fontWeight: "bold" },
       scrub: true,
       pin: ".engravings-gravures",
@@ -490,7 +439,6 @@ const transitionSecondAnimation = () => {
     start: "top 50%",
     end: "bottom 100%",
     scrub: 1,
-    // pin: ".woodblock_transition",
     // markers: true
   });
 }
@@ -501,8 +449,6 @@ const transitionSecondAnimation = () => {
 
 
 //typography game
-
-// document.addEventListener("DOMContentLoaded", () => {
 
 const typographyGame = () => {
   // Map punch classes to letter spaces
@@ -528,9 +474,7 @@ const typographyGame = () => {
         for (const letterSpace of letterSpaces) {
           if (letterSpace.textContent === "?") {
             letterSpace.textContent = punchClass.replace("punch--", "").toUpperCase();
-            // letterSpace.style.backgroundColor = "var(--c-cuprum)"
             letterSpace.classList.add("highlight");
-            // letterSpace.style.backgroundColor = "var(--c-cuprum)"
 
             letterSpace.style.color = "var(--c-dark)"
             break; // Stop after updating the first unfilled space
@@ -540,9 +484,9 @@ const typographyGame = () => {
     });
   });
 }
-// });
 
-document.addEventListener("DOMContentLoaded", () => {
+
+const clickReveal = () => {
   // Map each tool item class to its corresponding name
   const toolNames = {
     "tool_item--1": "1. Etching Needle",
@@ -571,7 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
+};
 
 
 
@@ -580,7 +524,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //printing game
 
-// document.addEventListener("DOMContentLoaded", () => {  //removeDOM
 const woodblockWorkshop = () => {
 
   const drawingCanvas = document.getElementById("drawingCanvas");
@@ -589,7 +532,6 @@ const woodblockWorkshop = () => {
   const resultCanvas = document.getElementById("resultCanvas");
   const resultCtx = resultCanvas.getContext("2d");
   const doneButton = document.getElementById("doneButton");
-  // const engravingAnimation = document.getElementById("engravingAnimation");
   const resultDiv = document.querySelector(".result");
   const animationCanvas = document.getElementById("anim-box");
   const drawingTitle = document.querySelector('.drawing_step');
@@ -599,14 +541,12 @@ const woodblockWorkshop = () => {
 
 
 
-  // let animationLottie;
 
   let isDrawing = false;
 
   console.log('MAIN workshop console test')
 
 
-  // remove functions - put in init
 
   const startDrawing = (e) => {
     e.preventDefault();
@@ -625,7 +565,6 @@ const woodblockWorkshop = () => {
   }
 
   const stopDrawing = () => {
-    // e.preventDefault();
     isDrawing = false;
     ctx.closePath();
   }
@@ -646,60 +585,6 @@ const woodblockWorkshop = () => {
   drawingCanvas.addEventListener("touchstart", startDrawing);
   drawingCanvas.addEventListener("touchmove", draw);
   drawingCanvas.addEventListener("touchend", stopDrawing);
-
-
-
-
-
-
-  ///// for option 3 (remove when not needed)
-
-  // doneButton.addEventListener("click", () => {
-  //   engravingAnimation.style.display = "block";
-
-  //   ///////////option 1
-  //   // Load the Lottie animation
-  //   // const animation = lottie.loadAnimation({
-  //   //   // container: engravingAnimation, // Target the Lottie container
-  //   //   // renderer: "svg",
-  //   //   loop: false,
-  //   //   autoplay: true,
-  //   //   path: "assets/engraving.json", // Lottie animation JSON file
-
-  //   /////////option 2
-  //   // const animationLottie = () => {
-  //   //   lottie.loadAnimation({
-  //   //     // container: engravingAnimation, // Target the Lottie container
-  //   //     // renderer: "svg",
-  //   //     canvas: document.querySelector("#anim-box"),
-  //   //     loop: false,
-  //   //     autoplay: true,
-  //   //     path: "assets/engraving.json", // Lottie animation JSON file
-  //   //   });
-  //   // }
-
-  //   animationLottie.addEventListener("complete", () => {
-  //     drawingCanvas.style.display = "none"; // Hide animation
-  //     engravingAnimation.style.display = "none"; // Hide animation
-  //     doneButton.style.display = "none";
-  //     resultDiv.style.display = "block"; // Show the result
-  //     console.log('the picture was printed')
-
-  //     // Mirror the drawing and display it on the papyrus
-  //     const imageData = ctx.getImageData(0, 0, drawingCanvas.width, drawingCanvas.height);
-  //     resultCtx.save();
-  //     resultCtx.scale(-1, 1); // Mirror horizontally
-  //     resultCtx.drawImage(drawingCanvas, -drawingCanvas.width, 0);
-  //     resultCtx.restore();
-  //   });
-  // });
-
-
-
-
-
-  //////////option 3
-
 
 
   doneButton.addEventListener("click", () => {
@@ -724,10 +609,15 @@ const woodblockWorkshop = () => {
       console.log("Animation complete!");
       engravingTitle.style.display = "none";
       resultTitle.style.display = "block";
+
+
       drawingPart.style.display = "none"; // Hide animation
       animationCanvas.style.display = "none"; // Hide animation
       resultDiv.style.display = "block"; // Show the result
+
       console.log('the picture was printed')
+
+
 
       // Mirror the drawing and display it on the papyrus
       const imageData = ctx.getImageData(0, 0, drawingCanvas.width, drawingCanvas.height);
@@ -735,15 +625,17 @@ const woodblockWorkshop = () => {
       resultCtx.scale(-1, 1); // Mirror horizontally
       resultCtx.drawImage(drawingCanvas, -drawingCanvas.width, 0);
       resultCtx.restore();
-    });
+    },
+      { once: true }
+    );
 
+
+
+    // });
 
 
   });
-
-
-}
-// });
+};
 
 
 
@@ -757,18 +649,17 @@ const woodblockWorkshop = () => {
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   console.log('init console test')
-  // gsap.registerPlugin(MotionPathPlugin);
   timelineScrollAnimation();
   transitionAnimation();
   introAnimation();
   introSecondAnimation();
   typographyBgAnimation();
-
   typographyAnimation();
   typographySecondAnimation();
   typographyGame();
   engravingTransitionAnimation();
   engravingsBgAnimation();
+  clickReveal();
   woodblockBgAnimation();
   woodblockWorkshop();
   transitionSecondAnimation();
