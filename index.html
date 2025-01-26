@@ -24,10 +24,10 @@
 
   <div class="site-wrapper">
 
-    <header>
+    <header id="home">
 
       <nav>
-        <div class="logo"><a href="#home"><img src="./src/assets/logo-museum.svg" alt="" width="60"></a></div>
+        <div class="logo"><a href=""><img src="./src/assets/logo-museum.svg" alt="home" width="60"></a></div>
 
         <ul class="navigation">
           <li><a href="#biography">Biography</a></li>
@@ -43,8 +43,8 @@
         <div class="hamburger_menu">
 
           <div class="hamburger">
-            <img class="hamburger-icon" src="./src/assets/hamburger_menu.svg" width="35" alt="">
-            <img class="close-icon" src="./src/assets/close_hamburger.svg" width="35" alt="">
+            <img class="hamburger-icon" src="./src/assets/hamburger_menu.svg" width="35" alt="open menu">
+            <img class="close-icon" src="./src/assets/close_hamburger.svg" width="35" alt="close menu">
           </div>
 
           <div class="menu_navigation">
@@ -58,18 +58,23 @@
               <!-- <li></li> -->
             </ul>
             <div class="menu_footer">
-              <img class="logo-footer" src="./src/assets/logo-museum.svg" alt="" width="50">
-              <a href="">The museum website <img src="./src/assets/external-link.svg" alt=""></a>
+              <a href="#home"><img class="logo-footer" src="./src/assets/logo-museum.svg" alt="home" width="40"></a>
+              <div><a href="https://museumplantinmoretus.be/en">
+                  <p>The museum website </p>
+                  <img src="./src/assets/external-link.svg" width="15" alt="museum website"></p>
+                </a>
+
+              </div>
+
             </div>
+
+
           </div>
-
-
-        </div>
 
       </nav>
     </header>
     <main>
-      <section id="home" class="header_page">
+      <section class="header_page">
         <div class="header_page_header">
           <p>A 6-episode digital journey to the Plantin Press presents:</p>
           <h1>“A Journey Through Plantin's Printing Techniques”</h1>
@@ -87,7 +92,8 @@
           ./src/assets/portret-plantin/portret-plantin-1780.avif  1780w,
           ./src/assets/portret-plantin/portret-plantin-1920.avif  1920w,
           ./src/assets/portret-plantin/portret-plantin-2048.avif  2048w,
-        " sizes="55vw">
+        "
+          sizes="(min-width: 1280px) 35vw, (min-width: 800px) 41.96vw, (min-width: 480px) 25.33vw, (min-width: 340px) 23.33vw, calc(65vw - 136px)">
 
         <!-- <picture>
         <source srcset="
@@ -134,8 +140,8 @@
       </section>
 
       <!-- how to avoid horisontal scroll on the rest of webpage bc of width of timeline -->
-
-      <section id="biography" class="timeline">
+      <div id="biography"></div>
+      <section class="timeline">
         <h2 class="flow">Flow of history</h2>
         <!-- grid structure?? -->
         <!-- how to optimise the scroll effect for all the timecodes -->
@@ -353,7 +359,7 @@
           ./src/assets/engraving-gravures/engravings-img.1-960.avif 960w,
           ./src/assets/engraving-gravures/engravings-img.1-1090.avif 1090w,
           ./src/assets/engraving-gravures/engravings-img.1-1200.avif 1200w
-          " sizes="50vw">
+          " sizes="(min-width: 340px) 50vw, calc(-2875vw + 9360px)">
 
           <img class="engravings-gravure engravings-gravure--2"
             src="./src/assets/engraving-gravures/engravings-img.2.png" alt="" srcset="
@@ -371,7 +377,8 @@
                 ./src/assets/engraving-gravures/engravings-img.2-1680.avif 1680w,
                 ./src/assets/engraving-gravures/engravings-img.2-1760.avif 1760w,
                 ./src/assets/engraving-gravures/engravings-img.2-1840.avif 1840w,
-                ./src/assets/engraving-gravures/engravings-img.2-1920.avif 1920w" sizes="50vw">
+                ./src/assets/engraving-gravures/engravings-img.2-1920.avif 1920w"
+            sizes="(min-width: 340px) 50vw, calc(-2875vw + 9360px)">
         </div>
 
 
@@ -533,21 +540,21 @@
                   ./src/assets/transition/transition-1-578.avif 578w,
                   ./src/assets/transition/transition-1-740.avif 740w,
                   ./src/assets/transition/transition-1-867.avif 867w"
-            sizes="(min-width: 600px) 269px, (min-width: 340px) calc(41.67vw + 27px), calc(-550vw + 1919px)"></div>
+            sizes="(min-width: 700px) 269px, (min-width: 340px) calc(29.12vw + 71px), calc(-540vw + 1889px)"></div>
         <div class="transition-2"><img src="./src/assets/transition/transition-2.png" alt=""></div>
         <div class="transition-3"><img src="./src/assets/transition/transition-3.png" alt=""></div>
         <div class="transition-4"><img src="./src/assets/transition/transition-4.png" alt="" srcset="./src/assets/transition/transition-4-303.avif 303w,
                   ./src/assets/transition/transition-4-606.avif 606w,
                   ./src/assets/transition/transition-4-770.avif 770w,
                   ./src/assets/transition/transition-4-909.avif 909w"
-            sizes="(min-width: 1040px) 282px, (min-width: 340px) calc(26.62vw + 11px), calc(-930vw + 3072px)"></div>
+            sizes="(min-width: 1180px) 283px, (min-width: 340px) calc(22.07vw + 27px), calc(-930vw + 3073px)"></div>
         <div class="transition-5"><img src="./src/assets/transition/transition-5.png" alt=""></div>
         <div class="transition-6"><img src="./src/assets/transition/transition-6.png" alt="" srcset="./src/assets/transition/transition-6-529.avif 529w,
                   ./src/assets/transition/transition-6-926.avif 926w,
                   ./src/assets/transition/transition-6-1058.avif 1058w,
                   ./src/assets/transition/transition-6-1350.avif 1350w,
                   ./src/assets/transition/transition-6-1587.avif 1587w"
-            sizes="(min-width: 1800px) 492px, (min-width: 340px) calc(27.01vw + 11px), calc(-1635vw + 5330px)"></div>
+            sizes="(min-width: 2080px) 492px, (min-width: 340px) calc(22.56vw + 27px), calc(-1370vw + 4485px)"></div>
       </div>
 
       <section class="legacy">
@@ -575,7 +582,10 @@
     </main>
 
     <footer>
-      <img src="./src/assets/logo-museum.svg" alt="">
+      <img src="./src/assets/logo-museum.svg" width="60" alt="">
+      <p><strong>A 6-episode digital journey to the Plantin Press:</strong><br>“A Journey Through Plantin's Printing
+        Techniques”</p>
+      <p class="footer_p">Museum Plantin-Moretus © 2015 - 2025</p>
     </footer>
   </div>
 

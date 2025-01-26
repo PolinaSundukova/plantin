@@ -41,7 +41,7 @@ const navMenu = document.querySelector('.menu_navigation');
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const closeIcon = document.querySelector('.close-icon');
 const overlay = document.querySelector('.overlay');
-const navLinks = document.querySelectorAll('.menu_navigation a');
+const navLinks = document.querySelectorAll('.menu_navigation li a');
 
 hamburgerBtn.addEventListener('click', () => {
   navMenu.classList.toggle('active');
@@ -266,10 +266,10 @@ const transitionAnimation = () => {
     trigger: ".letters_section",
     animation: lettersMovement,
     // start: "top 60%",
-    start: "top 0%",
-    end: "bottom 10%",
+    start: "top 50%",
+    end: "bottom 100%",
     scrub: 1,
-    pin: ".letters_section",
+    // pin: ".letters_section",
     // markers: true
   });
 }
@@ -487,10 +487,10 @@ const transitionSecondAnimation = () => {
   ScrollTrigger.create({
     trigger: ".woodblock_transition",
     animation: lettersMovement,
-    start: "top 0%",
-    end: "bottom 10%",
+    start: "top 50%",
+    end: "bottom 100%",
     scrub: 1,
-    pin: ".woodblock_transition",
+    // pin: ".woodblock_transition",
     // markers: true
   });
 }
@@ -506,6 +506,7 @@ const transitionSecondAnimation = () => {
 
 const typographyGame = () => {
   // Map punch classes to letter spaces
+  const letterField = document.querySelectorAll('.letter_spaces div')
   const letterMap = {
     "punch--A": "a_letter",
     "punch--D": "d_letter",
@@ -527,6 +528,11 @@ const typographyGame = () => {
         for (const letterSpace of letterSpaces) {
           if (letterSpace.textContent === "?") {
             letterSpace.textContent = punchClass.replace("punch--", "").toUpperCase();
+            // letterSpace.style.backgroundColor = "var(--c-cuprum)"
+            letterSpace.classList.add("highlight");
+            // letterSpace.style.backgroundColor = "var(--c-cuprum)"
+
+            letterSpace.style.color = "var(--c-dark)"
             break; // Stop after updating the first unfilled space
           }
         }
@@ -539,23 +545,28 @@ const typographyGame = () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Map each tool item class to its corresponding name
   const toolNames = {
-    "tool_item--1": "Etching Needle",
-    "tool_item--2": "Dabber for applying",
-    "tool_item--3": "Scraper",
-    "tool_item--4": "Hammer",
-    "tool_item--5": "Scooper",
-    "tool_item--6": "Calliper Compasses",
+    "tool_item--1": "1. Etching Needle",
+    "tool_item--2": "2. Dabber for applying",
+    "tool_item--3": "3. Scraper",
+    "tool_item--4": "4. Hammer",
+    "tool_item--5": "5. Scooper",
+    "tool_item--6": "6. Calliper Compasses",
   };
 
   // Add click event listeners to each tool item
   document.querySelectorAll(".tool_item").forEach((toolItem) => {
     toolItem.addEventListener("click", () => {
+
+      document.querySelectorAll(".tool_item").forEach((item) => item.classList.remove("highlight"));
+      toolItem.classList.add("highlight");
+
       const toolClass = Array.from(toolItem.classList).find((cls) => cls.startsWith("tool_item--"));
       if (toolClass) {
         const toolName = toolNames[toolClass];
         if (toolName) {
           // Update the content of the paragraph with the tool name
           document.querySelector(".tool_name").textContent = toolName;
+
         }
       }
     });
