@@ -16,7 +16,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Varta:wght@300..700&display=swap"
     rel="stylesheet">
 
-  <title>Vite App</title>
+  <title>Plantin Techniques</title>
 </head>
 
 <body>
@@ -27,12 +27,14 @@
     <header>
 
       <nav>
-        <div class="logo"><img src="./src/assets/logo-museum.svg" alt="" width="60"></div>
+        <div class="logo"><a href="#home"><img src="./src/assets/logo-museum.svg" alt="" width="60"></a></div>
 
         <ul class="navigation">
           <li><a href="#biography">Biography</a></li>
           <li><a href="#typography">Typography</a></li>
           <li><a href="#engravings">Engravings</a></li>
+          <li><a href="#woodblocks">Woodblocks</a></li>
+
           <!-- <li></li> -->
         </ul>
         <div class="overlay"></div>
@@ -41,8 +43,8 @@
         <div class="hamburger_menu">
 
           <div class="hamburger">
-            <img class="hamburger-icon" src="./src/assets/hamburger_menu.svg" width="40" alt="">
-            <img class="close-icon" src="./src/assets/close_hamburger.svg" width="40" alt="">
+            <img class="hamburger-icon" src="./src/assets/hamburger_menu.svg" width="35" alt="">
+            <img class="close-icon" src="./src/assets/close_hamburger.svg" width="35" alt="">
           </div>
 
           <div class="menu_navigation">
@@ -51,10 +53,12 @@
               <li><a href="#biography">Biography</a></li>
               <li><a href="#typography">Typography</a></li>
               <li><a href="#engravings">Engravings</a></li>
+              <li><a href="#woodblocks">Woodblocks</a></li>
+
               <!-- <li></li> -->
             </ul>
             <div class="menu_footer">
-              <img src="./src/assets/logo-museum.svg" alt="" width="50">
+              <img class="logo-footer" src="./src/assets/logo-museum.svg" alt="" width="50">
               <a href="">The museum website <img src="./src/assets/external-link.svg" alt=""></a>
             </div>
           </div>
@@ -65,7 +69,7 @@
       </nav>
     </header>
     <main>
-      <section class="header_page">
+      <section id="home" class="header_page">
         <div class="header_page_header">
           <p>A 6-episode digital journey to the Plantin Press presents:</p>
           <h1>“A Journey Through Plantin's Printing Techniques”</h1>
@@ -83,7 +87,7 @@
           ./src/assets/portret-plantin/portret-plantin-1780.avif  1780w,
           ./src/assets/portret-plantin/portret-plantin-1920.avif  1920w,
           ./src/assets/portret-plantin/portret-plantin-2048.avif  2048w,
-        " sizes="(min-width: 800px) 40vw, (min-width: 340px) 70vw, calc(-140vw + 672px)">
+        " sizes="55vw">
 
         <!-- <picture>
         <source srcset="
@@ -106,8 +110,8 @@
       <section class="intro">
 
         <div class="intro_gravures">
-          <img class="intro-gravure intro_gravure--1" src="./src/assets/intro-gravure.1.svg" width="200" alt="">
-          <img class="intro-gravure intro_gravure--2" src="./src/assets/intro-gravure.2.svg" width="200" alt="">
+          <img class="intro-gravure intro_gravure--1" src="./src/assets/intro-gravure.1.svg" width="300" alt="">
+          <img class="intro-gravure intro_gravure--2" src="./src/assets/intro-gravure.2.svg" width="300" alt="">
           <!-- how to do illustrations cut in two halfs and coming out of viewport -->
         </div>
 
@@ -266,21 +270,27 @@
               </p>
             </div>
 
+            <div class="punches_field">
 
-            <div class="punches">
-              <div class="punch punch--A"><img src="./src/assets/punches/A-PUNCH.png" alt="a"></div>
-              <div><img src="./src/assets/punches/bc-punches.png" alt="bc"></div>
-              <div class="punch punch--D"><img src="./src/assets/punches/D-PUNCH.png" alt="d"></div>
-              <div><img src="./src/assets/punches/ef-punches.png" alt="ef"></div>
-              <div class="punch punch--G"><img src="./src/assets/punches/G-PUNCH.png" alt="g"></div>
-              <div><img src="./src/assets/punches/hijkl-punches.png" alt="hijkl"></div>
-              <div class="punch punch--M"><img src="./src/assets/punches/M-PUNCH.png" alt="m"></div>
-              <div class="punch punch--N"><img src="./src/assets/punches/N-PUNCH.png" alt="n"></div>
-              <div class="punch punch--O"><img src="./src/assets/punches/O-PUNCH.png" alt="o"></div>
-              <div><img src="./src/assets/punches/pq-punches.png" alt="pq"></div>
-              <div class="punch punch--R"><img src="./src/assets/punches/R-PUNCH.png" alt="r"></div>
-              <!-- <div><img src="./src/assets/punches/stuvwxyz-punches.png" alt=""></div> -->
+
+              <div class="punches">
+                <div class="punch punch--A"><img src="./src/assets/punches/A-PUNCH.png" alt="a"></div>
+                <div><img src="./src/assets/punches/bc-punches.png" alt="bc"></div>
+                <div class="punch punch--D"><img src="./src/assets/punches/D-PUNCH.png" alt="d"></div>
+                <div><img src="./src/assets/punches/ef-punches.png" alt="ef"></div>
+                <div class="punch punch--G"><img src="./src/assets/punches/G-PUNCH.png" alt="g"></div>
+                <div><img src="./src/assets/punches/hijkl-punches.png" alt="hijkl"></div>
+                <div class="punch punch--M"><img src="./src/assets/punches/M-PUNCH.png" alt="m"></div>
+                <div class="punch punch--N"><img src="./src/assets/punches/N-PUNCH.png" alt="n"></div>
+                <div class="punch punch--O"><img src="./src/assets/punches/O-PUNCH.png" alt="o"></div>
+                <div><img src="./src/assets/punches/pq-punches.png" alt="pq"></div>
+                <div class="punch punch--R"><img src="./src/assets/punches/R-PUNCH.png" alt="r"></div>
+
+                <!-- <div><img src="./src/assets/punches/stuvwxyz-punches.png" alt=""></div> -->
+              </div>
+              <p>Press the colourful punches to fill in the answer</p>
             </div>
+
           </div>
 
 
@@ -432,7 +442,7 @@
 
 
 
-        <section class="woodblock_section">
+        <section id="woodblocks" class="woodblock_section">
 
 
           <article class="woodblocks">
@@ -472,14 +482,19 @@
 
 
             <div class="printing-game">
+              <h4 class="drawing_step">Draw your woodblock design:</h4>
+              <h4 class="engraving_step">Engraving your woodblock...</h4>
+              <h4 class="result_step">Your printed illustration is ready!</h4>
 
               <div class="drawing_part">
+
                 <!-- Canvas for drawing -->
                 <canvas id="drawingCanvas" width="350" height="350"></canvas>
 
                 <div id="engravingAnimation">
+
                   <!-- <h2 class="h2">box</h2> -->
-                  <canvas id="anim-box" width="350" height="350"></canvas>
+                  <canvas id="anim-box" width="350px" height="350px"></canvas>
                 </div>
                 <!-- "Done Drawing" button -->
                 <button id="doneButton">Done Drawing</button>
@@ -489,6 +504,7 @@
 
               <!-- Papyrus Result -->
               <div class="result">
+
                 <!-- <img id="papyrus" src="./src/assets/papyrus.png" alt="Papyrus" style="width: 500px; height: auto;"> -->
                 <canvas id="resultCanvas" width="350" height="350"></canvas>
               </div>
@@ -535,17 +551,25 @@
       </div>
 
       <section class="legacy">
-        <h2>The Legacy of Plantin</h2>
-        <p>Christophe Plantin's dedication to quality, innovation, and the dissemination of knowledge established a high
-          standard
-          for book production that continues to influence printers and publishers even today. The
-          <strong>Plantin-Moretus
-            Museum</strong>, a UNESCO
-          World Heritage Site, stands as a testament to his enduring legacy, offering a fascinating glimpse into the
-          world
-          of
-          16th-century printing and publishing.
-        </p>
+        <div class="legacy-text">
+          <img src="./src/assets/legacy-logo.svg" width="100" alt="">
+
+          <h2>The Legacy of Plantin</h2>
+          <p>Christophe Plantin's dedication to quality, innovation, and the dissemination of knowledge established a
+            high
+            standard
+            for book production that continues to influence printers and publishers even today.</p>
+          <p> The
+            <strong>Plantin-Moretus
+              Museum</strong>, a UNESCO
+            World Heritage Site, stands as a testament to his enduring legacy, offering a fascinating glimpse into the
+            world
+            of
+            16th-century printing and publishing.
+          </p>
+          <a href="https://museumplantinmoretus.be/en"><button>Visit the museum website</button></a>
+
+        </div>
       </section>
 
     </main>

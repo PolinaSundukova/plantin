@@ -104,7 +104,7 @@ const timelineScrollAnimation = () => {
   console.log('timeline console test')
   const $timeline = document.querySelector(".timeline");
 
-  console.log(timecodes.length)
+  // console.log(timecodes.length)
 
   let scrollTween = gsap.to(timecodes, {
     xPercent: -100 * (timecodes.length + 2),
@@ -113,10 +113,11 @@ const timelineScrollAnimation = () => {
       trigger: $timeline,
       start: "top top",
       end: () => {
-        return "+=" + ($timeline.offsetWidth)
+        return "+=" + ($timeline.offsetWidth * 10)
       },
+      // end: "bottom 0%",
       pin: $timeline,
-      scrub: 1,
+      scrub: 0.5,
       // markers: true
     }
   })
@@ -393,7 +394,7 @@ const engravingsBgAnimation = () => {
     scrub: 1,
     pin: ".engravings_intro",
     pinSpacing: true,
-    markers: true
+    // markers: true
   });
 }
 
@@ -420,7 +421,27 @@ const woodblockBgAnimation = () => {
 }
 
 
+const legacyBgAnimation = () => {
 
+  const legacyBg = gsap.timeline()
+
+    .from(".legacy-text", {
+      y: 500,
+      opacity: 0,
+    })
+
+
+  ScrollTrigger.create({
+    trigger: ".legacy",
+    animation: legacyBg,
+    start: "top 0%",
+    end: "bottom 20%",
+    scrub: 1,
+    pin: ".legacy",
+    pinSpacing: true,
+    // markers: true
+  });
+}
 
 const transitionSecondAnimation = () => {
 
@@ -552,14 +573,22 @@ document.addEventListener("DOMContentLoaded", () => {
 const woodblockWorkshop = () => {
 
   const drawingCanvas = document.getElementById("drawingCanvas");
+  const drawingPart = document.querySelector('.drawing_part')
   const ctx = drawingCanvas.getContext("2d");
   const resultCanvas = document.getElementById("resultCanvas");
   const resultCtx = resultCanvas.getContext("2d");
   const doneButton = document.getElementById("doneButton");
-  const engravingAnimation = document.getElementById("engravingAnimation");
+  // const engravingAnimation = document.getElementById("engravingAnimation");
   const resultDiv = document.querySelector(".result");
-  const animationCanvas = document.getElementById("anim-box")
-  let animationLottie;
+  const animationCanvas = document.getElementById("anim-box");
+  const drawingTitle = document.querySelector('.drawing_step');
+  const engravingTitle = document.querySelector('.engraving_step');
+  const resultTitle = document.querySelector('.result_step');
+
+
+
+
+  // let animationLottie;
 
   let isDrawing = false;
 
@@ -665,6 +694,13 @@ const woodblockWorkshop = () => {
   doneButton.addEventListener("click", () => {
 
     animationCanvas.style.display = "block";
+    doneButton.style.display = "none";
+    engravingTitle.style.display = "block";
+    drawingTitle.style.display = "none";
+    drawingCanvas.style.backgroundColor = "var(--c-white)"
+
+
+
 
     const animationLottie = new DotLottie({
       autoplay: true,
@@ -675,9 +711,10 @@ const woodblockWorkshop = () => {
 
     animationLottie.addEventListener("complete", () => {
       console.log("Animation complete!");
-      drawingCanvas.style.display = "none"; // Hide animation
+      engravingTitle.style.display = "none";
+      resultTitle.style.display = "block";
+      drawingPart.style.display = "none"; // Hide animation
       animationCanvas.style.display = "none"; // Hide animation
-      doneButton.style.display = "none";
       resultDiv.style.display = "block"; // Show the result
       console.log('the picture was printed')
 
@@ -718,13 +755,14 @@ const init = () => {
 
   typographyAnimation();
   typographySecondAnimation();
-
   typographyGame();
   engravingTransitionAnimation();
   engravingsBgAnimation();
   woodblockBgAnimation();
   woodblockWorkshop();
   transitionSecondAnimation();
+  legacyBgAnimation();
+
 }
 init();
 
